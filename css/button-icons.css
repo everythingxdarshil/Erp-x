@@ -1,0 +1,26 @@
+/* Font Awesome Arrow Icon for Learn More Buttons */
+.btn-module-learn::after {
+    content: "\f061";
+    /* Font Awesome arrow-right icon */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    margin-left: 8px;
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.btn-module-learn:hover::after {
+    transform: translateX(4px);
+}
+
+/* Font Awesome Icons for Badge Icons */
+.badge-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+}
+
+.badge-icon i {
+    font-size: 14px;
+}

@@ -1,0 +1,1689 @@
+﻿/* ============================================
+   CONSOLIDATED UTILITIES & RESPONSIVE
+   Merged from: unified-core.css, spacing-optimization.css, responsive-enhancements.css
+   ============================================ */
+
+/* ============================================
+   FROM: unified-core.css
+   ============================================ */
+
+/* Spider-Web Network: Left-Center-Right Layout */
+.unified-core-section {
+    padding: 2rem 0;
+    background: #E9ECEA;
+    overflow: visible;
+    position: relative;
+}
+
+.unified-core-section .section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.network-container {
+    max-width: 1400px;
+    margin: 4rem auto 0;
+    position: relative;
+    height: 550px;
+}
+
+/* SVG Spider-Web Connections */
+.network-web {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.web-line {
+    stroke: #cbd5e1;
+    stroke-width: 1;
+    fill: none;
+    opacity: 0.5;
+}
+
+.web-line-primary {
+    stroke: #000000;
+    stroke-width: 1.5;
+    opacity: 0.25;
+}
+
+/* Animated data pulses */
+.pulse-dot {
+    fill: #000000;
+    r: 3;
+}
+
+.pulse-left-to-core {
+    opacity: 0;
+    animation: pulse-flow-in 4s infinite ease-in-out;
+}
+
+.pulse-core-to-right {
+    opacity: 0;
+    animation: pulse-flow-out 4s infinite ease-in-out;
+}
+
+@keyframes pulse-flow-in {
+    0% {
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 0.6;
+    }
+
+    50% {
+        opacity: 0.8;
+    }
+
+    85% {
+        opacity: 0.6;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes pulse-flow-out {
+    0% {
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 0.7;
+    }
+
+    50% {
+        opacity: 0.9;
+    }
+
+    85% {
+        opacity: 0.7;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+/* Hover interactions - highlight data paths */
+.node-finance:hover~.network-web .web-line-primary:nth-of-type(1),
+.node-crm:hover~.network-web .web-line-primary:nth-of-type(2),
+.node-hrms:hover~.network-web .web-line-primary:nth-of-type(3),
+.node-operations:hover~.network-web .web-line-primary:nth-of-type(4) {
+    opacity: 0.6;
+    stroke-width: 2;
+    transition: all 0.3s ease;
+}
+
+/* Core hover - increase pulse frequency */
+.core-node:hover {
+    transform: translate(-50%, -50%) scale(1.05);
+    box-shadow: 0 0 70px rgba(0, 0, 0, 0.2), 0 12px 45px rgba(0, 0, 0, 0.15);
+}
+
+.core-node:hover~.network-web .pulse-dot {
+    animation-duration: 2s !important;
+}
+
+/* Network Nodes */
+.network-node {
+    position: absolute;
+    background: #ffffff;
+    padding: 1.125rem 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+    border: 1px solid #e2e8f0;
+    z-index: 10;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    cursor: pointer;
+    display: inline-block;
+    min-height: auto;
+    height: auto;
+    will-change: transform;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+}
+
+.network-node:hover {
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.12);
+    border-color: #000000;
+    z-index: 20;
+}
+
+.node-label {
+    font-size: 0.9375rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 0;
+    white-space: nowrap;
+    display: block;
+}
+
+.network-node:hover .node-label {
+    color: #000000;
+}
+
+/* Central Core Node */
+.core-node {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #d7ff53;
+    padding: 2.25rem 2.75rem;
+    border-radius: 14px;
+    text-align: center;
+    box-shadow:
+        0 0 50px rgba(0, 0, 0, 0.15),
+        0 10px 35px rgba(0, 0, 0, 0.1),
+        0 25px 60px rgba(215, 255, 83, 0.4),
+        0 35px 80px rgba(215, 255, 83, 0.2);
+    border: 4px solid #ffffff;
+    z-index: 15;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.core-node:hover {
+    transform: translate(-50%, -50%) scale(1.05);
+    box-shadow:
+        0 0 70px rgba(0, 0, 0, 0.2),
+        0 12px 45px rgba(0, 0, 0, 0.15),
+        0 30px 70px rgba(215, 255, 83, 0.5),
+        0 40px 90px rgba(215, 255, 83, 0.25);
+}
+
+.core-node .node-label {
+    font-size: 1.375rem;
+    font-weight: 800;
+    color: #000000;
+    margin-bottom: 0.4rem;
+    letter-spacing: -0.02em;
+}
+
+.core-node:hover .node-label {
+    color: #000000;
+}
+
+.core-subtitle {
+    font-size: 0.8125rem;
+    color: rgba(0, 0, 0, 0.7);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-weight: 500;
+    margin: 0;
+}
+
+/* Left Side: Input System Nodes (Staggered Organic Positioning) */
+.node-finance,
+.node-crm,
+.node-hrms,
+.node-operations {
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.node-finance:hover,
+.node-crm:hover,
+.node-operations:hover {
+    transform: translateX(-8px) translateZ(0) scale(1.02);
+}
+
+.node-finance {
+    top: 8%;
+    left: 8%;
+}
+
+.node-crm {
+    top: 32%;
+    left: 4%;
+}
+
+.node-hrms {
+    top: 56%;
+    left: 10%;
+    bottom: auto !important;
+}
+
+.node-hrms:hover {
+    transform: translateX(-8px) translateZ(0) scale(1.02) !important;
+}
+
+.node-operations {
+    bottom: 10%;
+    left: 6%;
+}
+
+/* Right Side: Outcome Nodes (Staggered Positioning) */
+.outcome-node {
+    background: #ffffff;
+    border-left: none;
+    padding: 1rem 1.4rem;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.outcome-node:hover {
+    transform: translateX(-8px) translateZ(0) scale(1.02);
+}
+
+.node-truth {
+    top: 12%;
+    right: 6%;
+}
+
+.node-visibility {
+    top: 48%;
+    right: 4%;
+}
+
+.node-workflows {
+    bottom: 14%;
+    right: 8%;
+}
+
+.outcome-node .node-label {
+    font-size: 0.875rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.outcome-icon {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+}
+
+.outcome-icon svg {
+    width: 100%;
+    height: 100%;
+    fill: #000000;
+}
+
+/* Micro-Insight Labels */
+.micro-insight {
+    position: absolute;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    color: #64748b;
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid #e2e8f0;
+    padding: 0.375rem 0.75rem;
+    border-radius: 12px;
+    white-space: nowrap;
+    z-index: 5;
+    opacity: 0.7;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(4px);
+    letter-spacing: 0.02em;
+}
+
+.micro-insight:hover {
+    opacity: 1;
+    background: rgba(255, 255, 255, 0.95);
+    border-color: #cbd5e1;
+    transform: scale(1.05);
+}
+
+/* Left-side insights positioning */
+.insight-left {
+    left: 0;
+}
+
+.insight-finance {
+    top: 7%;
+    left: -8%;
+}
+
+.insight-crm {
+    top: 31%;
+    left: -9%;
+}
+
+.insight-hrms {
+    top: 55%;
+    left: -7.5%;
+}
+
+.insight-operations {
+    bottom: 9%;
+    left: -8.5%;
+}
+
+/* Right-side insights positioning */
+.insight-right {
+    right: 0;
+}
+
+.insight-truth {
+    top: 11%;
+    right: -8.5%;
+}
+
+.insight-visibility {
+    top: 47%;
+    right: -9%;
+}
+
+.insight-workflows {
+    bottom: 13%;
+    right: -11%;
+}
+
+/* Hover interactions with parent nodes */
+.node-finance:hover~.insight-finance,
+.node-crm:hover~.insight-crm,
+.node-hrms:hover~.insight-hrms,
+.node-operations:hover~.insight-operations,
+.node-truth:hover~.insight-truth,
+.node-visibility:hover~.insight-visibility,
+.node-workflows:hover~.insight-workflows {
+    opacity: 1;
+    background: rgba(255, 255, 255, 1);
+    border-color: #000000;
+    color: #0f172a;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .network-container {
+        height: 480px;
+    }
+
+    .core-node {
+        padding: 2rem 2.25rem;
+    }
+
+    .core-node .node-label {
+        font-size: 1.25rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    .unified-core-section {
+        padding: 3rem 0;
+        overflow: hidden;
+    }
+
+    /* Base Mobile Layout: Stack (Phones < 481px) */
+    .network-container {
+        height: auto !important;
+        margin-top: 1.5rem;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 1rem;
+        padding: 0;
+        align-items: stretch;
+    }
+
+    .network-web,
+    .micro-insight {
+        display: none !important;
+    }
+
+    /* Reset positioning for all nodes */
+    .network-node,
+    .core-node,
+    .node-finance,
+    .node-crm,
+    .node-hrms,
+    .node-operations,
+    .node-truth,
+    .node-visibility,
+    .node-workflows {
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        right: auto !important;
+        bottom: auto !important;
+        transform: none !important;
+        margin: 0 !important;
+        width: 100%;
+        max-width: 100%;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        min-height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .node-label {
+        font-size: 1rem;
+    }
+
+    /* Reorder: Inputs -> Core -> Outcomes */
+    .node-finance,
+    .node-crm,
+    .node-hrms,
+    .node-operations {
+        order: 1;
+    }
+
+    .node-truth,
+    .node-visibility,
+    .node-workflows {
+        order: 3;
+    }
+
+    /* Core Node Styling */
+    .core-node {
+        order: 2;
+        padding: 1.5rem;
+        margin-bottom: 1rem !important;
+        border-width: 2px;
+        background: #D7FF53;
+        flex-direction: column;
+    }
+
+    .core-node .node-label {
+        font-size: 1.25rem;
+        margin-bottom: 0.25rem;
+    }
+
+    .core-subtitle {
+        font-size: 0.75rem;
+    }
+
+    /* Outcome Nodes Styling */
+    .outcome-node {
+        justify-content: center;
+        background-color: #fcfcfc;
+        border-left: 1px solid #e2e8f0;
+    }
+
+    .outcome-node .node-label {
+        justify-content: center;
+        font-size: 0.95rem;
+    }
+
+    /* Tablet/Landscape Grid Override (481px - 1024px) */
+    @media (min-width: 481px) {
+        .network-container {
+            display: grid !important;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .core-node {
+            grid-column: 1 / -1;
+            width: 100%;
+            margin-bottom: 2rem !important;
+        }
+    }
+}
+
+/* ============================================
+   FROM: spacing-optimization.css
+   ============================================ */
+
+/* ============================================
+   MOBILE & TABLET SPACING OPTIMIZATION
+   Ultra-compact layout for modern SaaS mobile experience
+   ============================================ */
+
+/* ============================================
+   MOBILE (â‰¤ 480px) - Ultra-Tight, Immersive
+   ============================================ */
+@media (max-width: 480px) {
+
+    /* HORIZONTAL SPACING - Homepage sections are edge-to-edge, module pages have 16px padding */
+
+    /* Homepage Hero Section */
+    .hero-content,
+    .hero .container,
+    .hero-section .container {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    /* All Major Homepage Sections - Edge-to-edge */
+    .features-section .container,
+    .info-cards-section .container,
+    .newsletter-section .container,
+    .stats-section .container,
+    .certifications-section .container,
+    .video-testimonial-section .container,
+    .trust-testimonials-section .container,
+    .elevate-features-section .container,
+    .logo-slider-section .container,
+    .pricing-section .container,
+    .about-hero .container,
+    .mission-section .container,
+    .values-section .container,
+    .contact-section .container,
+    .industries-section .container {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    /* Card Internal Padding */
+    .info-card,
+    .elevate-card,
+    .feature-card {
+        padding: 1.25rem !important;
+        /* Compact internal padding */
+    }
+
+    /* CTA Sections */
+    .newsletter-container,
+    .product-cta-box {
+        padding: 1.5rem 1rem !important;
+    }
+
+    .stats-banner,
+    .certifications-container {
+        padding: 1.5rem 1rem !important;
+    }
+
+    /* VERTICAL SPACING - Consistent 32px between sections */
+    section,
+    .section {
+        padding-top: 2rem !important;
+        /* 32px */
+        padding-bottom: 2rem !important;
+        /* 32px */
+    }
+
+    /* Hero sections - 32px consistent */
+    .hero,
+    .hero-section,
+    .industries-hero,
+    .about-hero {
+        padding-top: 0rem !important;
+        padding-bottom: 1rem !important;
+    }
+
+    /* Specific section vertical spacing - 32px */
+    .features-section,
+    .info-cards-section,
+    .stats-section,
+    .certifications-section,
+    .elevate-features-section {
+        padding-top: 2rem !important;
+        padding-bottom: 2rem !important;
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+    }
+
+    /* Newsletter/CTA sections - 32px */
+    .newsletter-section,
+    .product-cta-section {
+        padding-top: 2rem !important;
+        padding-bottom: 2rem !important;
+    }
+
+    /* Logo slider - 32px consistent */
+    .logo-slider-section {
+        padding-top: 2rem !important;
+        padding-bottom: 2rem !important;
+    }
+
+    /* Testimonial sections - 32px */
+    .video-testimonial-section,
+    .trust-testimonials-section {
+        padding-top: 2rem !important;
+        padding-bottom: 2rem !important;
+    }
+
+    /* Module pages specific - 32px */
+    .benefits-section,
+    .features-showcase-section {
+        padding-top: 2rem !important;
+        padding-bottom: 2rem !important;
+    }
+
+    /* Reduce margins between elements */
+    .section-header,
+    .features-header,
+    .info-cards-header {
+        margin-bottom: 1.5rem !important;
+        /* Reduced from 2-3rem */
+    }
+
+    /* Grid gaps */
+    .features-grid,
+    .capabilities-grid,
+    .elevate-grid {
+        gap: 1rem !important;
+        /* Reduced from 1.5-2rem */
+    }
+
+    .info-cards-list {
+        gap: 1rem !important;
+        /* Reduced from 1.5-2rem */
+    }
+
+    /* Stats grid */
+    .stats-grid {
+        gap: 1rem !important;
+        margin-top: 1.5rem !important;
+    }
+
+    /* ============================================
+       UNIVERSAL APPROACH: All containers get 16px padding
+       Then homepage sections override to 0px for edge-to-edge
+       ============================================ */
+
+    /* Step 1: Give ALL containers 16px padding by default */
+    .container {
+        padding-left: 1rem !important;
+        /* 16px */
+        padding-right: 1rem !important;
+        /* 16px */
+    }
+
+    /* Step 2: Override ONLY homepage-exclusive sections to edge-to-edge (0px) */
+    .hero .container,
+    .hero-section .container,
+    .hero-content,
+    .info-cards-section .container,
+    .stats-section .container,
+    .video-testimonial-section .container,
+    .trust-testimonials-section .container,
+    .elevate-features-section .container,
+    .logo-slider-section .container,
+    .pricing-section .container,
+    .about-hero .container,
+    .mission-section .container,
+    .values-section .container,
+    .contact-section .container,
+    .industries-section .container {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+}
+
+/* ============================================
+   TABLET (481px - 768px) - Balanced
+   ============================================ */
+@media (min-width: 481px) and (max-width: 768px) {
+
+    /* HORIZONTAL SPACING */
+    .container {
+        padding-left: 1rem !important;
+        /* 16px */
+        padding-right: 1rem !important;
+    }
+
+    /* Hero Section */
+    .hero-content {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+
+    /* Feature Cards */
+    .features-section .container,
+    .info-cards-section .container {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+
+    .info-card {
+        padding: 2rem !important;
+    }
+
+    /* CTA Sections */
+    .newsletter-section .container,
+    .product-cta-section .container {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+
+    .newsletter-container,
+    .product-cta-box {
+        padding: 2.5rem 2rem !important;
+    }
+
+    /* Stats Section */
+    .stats-section .container {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+
+    /* Certification Sections */
+    .certifications-section .container {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+
+    /* All other sections */
+    .video-testimonial-section .container,
+    .trust-testimonials-section .container,
+    .elevate-features-section .container,
+    .logo-slider-section .container {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+
+    /* VERTICAL SPACING - Consistent 32px */
+    section,
+    .section {
+        padding-top: 2rem !important;
+        padding-bottom: 2rem !important;
+    }
+
+    .features-section,
+    .info-cards-section,
+    .stats-section {
+        padding-top: 2rem !important;
+        padding-bottom: 2rem !important;
+    }
+
+    .section-header {
+        margin-bottom: 2rem !important;
+    }
+
+    .features-grid,
+    .info-cards-list {
+        gap: 1.5rem !important;
+    }
+}
+
+/* ============================================
+   LARGE TABLET (769px - 1024px) - Transitional
+   ============================================ */
+@media (min-width: 769px) and (max-width: 1024px) {
+
+    /* Closer to desktop but still optimized */
+    .container {
+        padding-left: 1.5rem !important;
+        /* 24px - Same as desktop but explicitly set */
+        padding-right: 1.5rem !important;
+    }
+
+    /* Ensure consistent spacing across all sections */
+    .hero-content,
+    .features-section .container,
+    .info-cards-section .container,
+    .newsletter-section .container,
+    .product-cta-section .container,
+    .stats-section .container,
+    .certifications-section .container {
+        padding-left: 1.5rem !important;
+        padding-right: 1.5rem !important;
+    }
+}
+
+/* ============================================
+   HEADER/NAVBAR - Responsive Padding
+   ============================================ */
+@media (max-width: 480px) {
+    .header {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        padding-top: 0.75rem !important;
+        padding-bottom: 0.75rem !important;
+    }
+
+    /* Navbar keeps some padding for usability */
+    .navbar {
+        padding-left: 0.75rem !important;
+        /* 12px - Maintained for touch targets */
+        padding-right: 0.75rem !important;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+    .header {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+
+    .navbar {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+}
+
+/* ============================================
+   FOOTER - Responsive Padding
+   ============================================ */
+@media (max-width: 480px) {
+    .footer {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        padding-top: 2rem !important;
+        padding-bottom: 2rem !important;
+    }
+
+    .footer-content {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+    .footer {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+}
+
+/* ============================================
+   CLEANUP - Remove artifacts (FIXED)
+   ============================================ */
+/* Ensure no stray text or rendering artifacts */
+body::before,
+html::before,
+body::after,
+html::after {
+    content: none !important;
+    display: none !important;
+}
+
+/* ============================================
+   FROM: responsive-enhancements.css
+   ============================================ */
+
+/* ============================================
+   RESPONSIVE ENHANCEMENTS - COMPLETE CROSS-DEVICE OPTIMIZATION
+   Mobile-First Approach with Standard Breakpoints
+   Mobile: â‰¤ 480px | Tablet: 481px â€“ 1024px | Desktop: â‰¥ 1025px
+   ============================================ */
+
+/* ============================================
+   GLOBAL RESPONSIVE FOUNDATION
+   ============================================ */
+
+/* Prevent horizontal scrolling on all devices */
+html {
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
+    min-height: 100vh;
+}
+
+/* Ensure all containers respect viewport width */
+* {
+    max-width: 100%;
+}
+
+/* Responsive images, videos, and iframes */
+img,
+video,
+iframe,
+svg {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ============================================
+   MOBILE (â‰¤ 480px) - COMPREHENSIVE OPTIMIZATIONS
+   ============================================ */
+
+@media screen and (max-width: 480px) {
+
+    /* === TYPOGRAPHY SCALING === */
+    h1,
+    .hero-title,
+    .page-title {
+        font-size: clamp(1.75rem, 8vw, 2.5rem) !important;
+        line-height: 1.2 !important;
+        letter-spacing: -0.02em !important;
+    }
+
+    h2,
+    .section-title,
+    .features-title {
+        font-size: clamp(1.5rem, 6vw, 2rem) !important;
+        line-height: 1.25 !important;
+    }
+
+    h3 {
+        font-size: clamp(1.125rem, 5vw, 1.5rem) !important;
+        line-height: 1.3 !important;
+    }
+
+    p,
+    .hero-description,
+    .section-description {
+        font-size: clamp(0.9375rem, 4vw, 1.0625rem) !important;
+        line-height: 1.6 !important;
+    }
+
+    /* === CONTAINER & SPACING === */
+    .container {
+        padding-left: 0rem !important;
+        padding-right: 0rem !important;
+        max-width: 100% !important;
+    }
+
+    section {
+        padding: 0.75rem 0.5rem !important;
+    }
+
+    /* === NAVIGATION === */
+    .header {
+        padding: 0.75rem 1rem !important;
+    }
+
+    .navbar {
+        padding: 0.75rem 1rem !important;
+        border-radius: 12px !important;
+    }
+
+    .logo-img {
+        height: 32px !important;
+    }
+
+    /* === HERO SECTION === */
+    .hero-content {
+        padding: 2rem 1rem !important;
+    }
+
+    .hero-text {
+        padding: 2rem 1rem !important;
+        border-radius: 12px !important;
+    }
+
+    .hero-buttons {
+        flex-direction: column !important;
+        width: 100% !important;
+        gap: 0.75rem !important;
+    }
+
+    .hero-button {
+        width: 100% !important;
+        padding: 0.875rem 1.5rem !important;
+        font-size: 0.9375rem !important;
+        min-height: 48px !important;
+    }
+
+    .hero-image-wrapper {
+        margin-top: 1.5rem !important;
+        padding: 0.5rem !important;
+    }
+
+    /* === FEATURES GRID === */
+    .features-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1rem !important;
+    }
+
+    .feature-card {
+        padding: 1.5rem 1rem !important;
+    }
+
+    .feature-icon-circle {
+        width: 56px !important;
+        height: 56px !important;
+    }
+
+    .feature-icon-svg {
+        width: 28px !important;
+        height: 28px !important;
+    }
+
+    /* === INFO CARDS === */
+    .info-card,
+    .info-card.reverse {
+        flex-direction: column !important;
+        padding: 1.5rem !important;
+        gap: 1.5rem !important;
+    }
+
+    .info-card-image {
+        width: 100% !important;
+        order: 2 !important;
+    }
+
+    .info-card-content {
+        order: 1 !important;
+    }
+
+    /* === STATS SECTION === */
+    .stats-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1rem !important;
+    }
+
+    .stat-card {
+        padding: 1.25rem !important;
+    }
+
+    .stat-value {
+        font-size: 1.75rem !important;
+    }
+
+    /* === PRODUCT CARDS === */
+    .product-split-card {
+        grid-template-columns: 1fr !important;
+        padding: 0 !important;
+    }
+
+    .product-split-card-reverse .split-content-panel,
+    .product-split-card-reverse .split-visual-panel {
+        order: initial !important;
+    }
+
+    .split-content-panel {
+        padding: 1.5rem !important;
+        order: 1 !important;
+    }
+
+    .split-visual-panel {
+        padding: 1rem !important;
+        order: 2 !important;
+    }
+
+    .visual-container {
+        min-height: 200px !important;
+    }
+
+    .product-illustration {
+        max-height: 220px !important;
+    }
+
+    /* === CAPABILITIES GRID === */
+    .capabilities-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1rem !important;
+    }
+
+    .capability-item {
+        padding: 1.5rem !important;
+    }
+
+    /* === TEAMS SECTION === */
+    .teams-tabs {
+        flex-direction: column !important;
+        width: 100% !important;
+        gap: 0.5rem !important;
+        padding: 0.5rem !important;
+    }
+
+    .team-tab-btn {
+        width: 100% !important;
+        padding: 0.75rem 1rem !important;
+    }
+
+    .team-content-panel.active {
+        grid-template-columns: 1fr !important;
+        padding: 1.5rem !important;
+        gap: 1.5rem !important;
+    }
+
+    /* === INDUSTRIES PAGE === */
+    .industry-card-header {
+        flex-direction: column !important;
+        padding: 1.5rem !important;
+        gap: 1rem !important;
+    }
+
+    .industry-card-body {
+        padding: 1.5rem !important;
+        gap: 1.5rem !important;
+    }
+
+    .modules-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 0.75rem !important;
+    }
+
+    .module-badge {
+        padding: 1rem 0.75rem !important;
+    }
+
+    .use-cases-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.25rem !important;
+    }
+
+    .challenges-list {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* === COMPARISON TABLE === */
+    .industry-comparison-table {
+        min-width: 700px !important;
+    }
+
+    .table-scroll-wrapper {
+        margin: 0 -1rem !important;
+        padding: 0 1rem !important;
+    }
+
+    /* === HOW IT WORKS === */
+    .steps-container {
+        flex-direction: column !important;
+        gap: 1.5rem !important;
+    }
+
+    .step-connector {
+        display: none !important;
+    }
+
+    .step-item {
+        padding: 1.5rem !important;
+    }
+
+    /* === NEWSLETTER === */
+    .newsletter-container {
+        padding: 1.5rem !important;
+    }
+
+    .input-group {
+        flex-direction: column !important;
+        gap: 0.75rem !important;
+        padding: 0 !important;
+        background: transparent !important;
+    }
+
+    .input-group input {
+        width: 100% !important;
+        padding: 0.875rem 1rem !important;
+        font-size: 1rem !important;
+        min-height: 48px !important;
+    }
+
+    .subscribe-btn {
+        width: 100% !important;
+        min-height: 48px !important;
+    }
+
+    /* === FOOTER === */
+    .footer {
+        padding: 2rem 1rem 0 !important;
+    }
+
+    .footer-container {
+        flex-direction: column !important;
+        gap: 2rem !important;
+    }
+
+    .footer-left {
+        max-width: 100% !important;
+    }
+
+    .footer-right {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 1.5rem !important;
+        width: 100% !important;
+    }
+
+    .footer-column:last-child {
+        grid-column: 1 / -1 !important;
+    }
+
+    .footer-logo-img {
+        height: 36px !important;
+    }
+
+    .social-icons {
+        gap: 0.5rem !important;
+    }
+
+    .social-icon {
+        width: 40px !important;
+        height: 40px !important;
+        min-width: 40px !important;
+        min-height: 40px !important;
+    }
+
+    /* === CTA SECTIONS === */
+    .product-cta-box {
+        padding: 2.5rem 1.5rem !important;
+        border-radius: 16px !important;
+    }
+
+    .product-cta-title {
+        font-size: 1.5rem !important;
+    }
+
+    .product-cta-desc {
+        font-size: 1rem !important;
+    }
+
+    /* === CONTACT FORM === */
+    .contact-form-section {
+        padding: 2rem 1rem !important;
+    }
+
+    .form-group {
+        margin-bottom: 1rem !important;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    textarea,
+    select {
+        width: 100% !important;
+        padding: 0.875rem 1rem !important;
+        font-size: 1rem !important;
+        min-height: 48px !important;
+    }
+
+    /* === TOUCH TARGETS === */
+    button,
+    a.hero-button,
+    a.cta-button,
+    .mobile-nav-link,
+    .mobile-cta-button,
+    input[type="submit"],
+    input[type="button"],
+    .toggle-switch,
+    .stepper-btn {
+        min-height: 44px !important;
+        min-width: 44px !important;
+    }
+
+    /* === PRICING TABLE - MOBILE CARD LAYOUT === */
+    .pricing-table-container {
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+        margin: 0 -1rem !important;
+        padding: 0 1rem !important;
+    }
+
+    table.pricing-config-table {
+        min-width: 700px !important;
+    }
+
+    /* Mobile Summary Bar */
+    .pricing-sticky-header {
+        left: 1rem !important;
+        right: 1rem !important;
+        width: calc(100% - 2rem) !important;
+        max-width: calc(100% - 2rem) !important;
+        bottom: 1rem !important;
+        border-radius: 12px !important;
+        padding: 0 !important;
+    }
+
+    .pricing-sticky-header .header-content {
+        padding: 0 1rem !important;
+        flex-wrap: wrap !important;
+        gap: 0.75rem !important;
+        height: auto !important;
+        min-height: 80px !important;
+        max-height: none !important;
+    }
+
+    .header-metric {
+        flex: 1 1 45% !important;
+        min-width: 120px !important;
+    }
+
+    .header-metric .label {
+        font-size: 0.65rem !important;
+    }
+
+    .header-metric .value {
+        font-size: 1.125rem !important;
+    }
+
+    .billing-cycle-control {
+        flex: 1 1 100% !important;
+        justify-content: center !important;
+        padding: 0.5rem 1rem !important;
+    }
+}
+
+/* ============================================
+   TABLET (481px â€“ 1024px) - BALANCED LAYOUT
+   ============================================ */
+
+@media screen and (min-width: 481px) and (max-width: 1024px) {
+
+    /* === CONTAINER & SPACING === */
+    .container {
+        padding-left: 2rem !important;
+        padding-right: 2rem !important;
+    }
+
+    section {
+        padding: 3rem 2rem !important;
+    }
+
+    /* === TYPOGRAPHY === */
+    h1,
+    .hero-title,
+    .page-title {
+        font-size: clamp(2.5rem, 6vw, 3.5rem) !important;
+    }
+
+    h2,
+    .section-title {
+        font-size: clamp(2rem, 5vw, 2.75rem) !important;
+    }
+
+    /* === NAVIGATION === */
+    .header {
+        position: relative !important;
+    }
+
+    .navbar {
+        padding: 1rem 1.5rem !important;
+    }
+
+    /* === HERO SECTION === */
+    .hero-content {
+        padding: 3rem 2rem !important;
+    }
+
+    .hero-text {
+        padding: 3rem 2rem !important;
+    }
+
+    /* === GRIDS === */
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 1.5rem !important;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 1.5rem !important;
+    }
+
+    .capabilities-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 1.5rem !important;
+    }
+
+    .elevate-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 1.5rem !important;
+    }
+
+    .trust-testimonials-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 1.5rem !important;
+    }
+
+    /* === PRODUCT CARDS === */
+    .product-split-card {
+        grid-template-columns: 1fr !important;
+    }
+
+    .split-content-panel {
+        padding: 2rem !important;
+    }
+
+    .split-visual-panel {
+        padding: 1.5rem !important;
+    }
+
+    /* === INDUSTRIES === */
+    .modules-grid {
+        grid-template-columns: repeat(3, 1fr) !important;
+    }
+
+    .use-cases-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    .steps-container {
+        flex-wrap: wrap !important;
+        gap: 1.5rem !important;
+    }
+
+    .step-item {
+        flex: 1 1 calc(50% - 0.75rem) !important;
+        min-width: 280px !important;
+    }
+
+    .step-connector {
+        display: none !important;
+    }
+
+    /* === FOOTER === */
+    .footer-container {
+        gap: 3rem !important;
+    }
+
+    .footer-right {
+        gap: 2rem !important;
+    }
+
+    /* === PRICING TABLE === */
+    .pricing-table-container {
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+    }
+
+    table.pricing-config-table {
+        min-width: 900px !important;
+    }
+
+    .pricing-sticky-header {
+        left: 2rem !important;
+        right: 2rem !important;
+        width: calc(100% - 4rem) !important;
+        max-width: calc(100% - 4rem) !important;
+        bottom: 2rem !important;
+    }
+
+    .pricing-sticky-header .header-content {
+        padding: 0 2rem !important;
+        gap: 1.5rem !important;
+    }
+}
+
+/* ============================================
+   TABLET PORTRAIT (481px â€“ 768px)
+   ============================================ */
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+
+    /* Mobile menu for smaller tablets */
+    .navbar-nav {
+        display: none !important;
+    }
+
+    .cta-button {
+        display: none !important;
+    }
+
+    .mobile-menu-toggle {
+        display: flex !important;
+        margin-left: auto !important;
+    }
+
+    .logo-img {
+        height: 38px !important;
+    }
+
+    /* Mobile menu integration with navbar - seamless connection */
+    .mobile-menu {
+        border-top: none !important;
+        border-top-left-radius: 0 !important;
+        border-top-right-radius: 0 !important;
+        margin-top: 0px !important;
+        /* Small gap to fit perfectly under navbar */
+        left: 2rem !important;
+        /* Match navbar visual left edge */
+        right: 2rem !important;
+        /* Match navbar visual right edge */
+        width: calc(100% - 4rem) !important;
+        /* Match navbar visual width */
+    }
+
+    .header.active .mobile-menu {
+        transform: translateY(0) !important;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
+    }
+
+    .header.active .navbar {
+        box-shadow: none !important;
+        margin-bottom: 0 !important;
+    }
+
+    .header.active {
+        padding-bottom: 0 !important;
+        /* Remove header bottom padding */
+    }
+
+    /* Adjust grids for portrait tablets */
+    .capabilities-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .team-content-panel.active {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* ============================================
+   DESKTOP (â‰¥ 1025px) - FULL FEATURED
+   ============================================ */
+
+@media screen and (min-width: 1025px) {
+
+    /* Ensure mobile menu is hidden */
+    .mobile-menu,
+    .mobile-menu-toggle {
+        display: none !important;
+    }
+
+    /* Sticky header enabled */
+    .header {
+        position: sticky !important;
+        top: 0 !important;
+    }
+
+    /* Full grid layouts */
+    .features-grid {
+        grid-template-columns: repeat(3, 1fr) !important;
+    }
+
+    .capabilities-grid {
+        grid-template-columns: repeat(3, 1fr) !important;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(3, 1fr) !important;
+    }
+
+    /* Product cards side-by-side */
+    .product-split-card {
+        grid-template-columns: 1fr 1fr !important;
+    }
+
+    /* Full width tables */
+    .pricing-table-container {
+        overflow-x: visible !important;
+    }
+
+    table.pricing-config-table {
+        min-width: 100% !important;
+    }
+}
+
+/* ============================================
+   LANDSCAPE ORIENTATION OPTIMIZATIONS
+   ============================================ */
+
+@media screen and (max-height: 600px) and (orientation: landscape) {
+
+    /* Reduce vertical padding in landscape */
+    section {
+        padding-top: 2rem !important;
+        padding-bottom: 2rem !important;
+    }
+
+    .hero-content {
+        padding-top: 2rem !important;
+        padding-bottom: 2rem !important;
+    }
+
+    /* Compact header */
+    .header {
+        padding: 0.5rem 1rem !important;
+    }
+
+    .navbar {
+        padding: 0.5rem 1rem !important;
+    }
+
+    .logo-img {
+        height: 32px !important;
+    }
+}
+
+/* ============================================
+   PRINT STYLES
+   ============================================ */
+
+@media print {
+
+    .header,
+    .footer,
+    .mobile-menu-toggle,
+    .mobile-menu,
+    .cta-button,
+    .hero-buttons,
+    .newsletter-section,
+    .pricing-sticky-header {
+        display: none !important;
+    }
+
+    body {
+        font-size: 12pt !important;
+        line-height: 1.5 !important;
+        color: #000 !important;
+        background: #fff !important;
+    }
+
+    .container {
+        max-width: 100% !important;
+        padding: 0 !important;
+    }
+
+    section {
+        page-break-inside: avoid !important;
+    }
+}
+
+/* ============================================
+   ACCESSIBILITY ENHANCEMENTS
+   ============================================ */
+
+/* Focus visible for keyboard navigation */
+*:focus-visible {
+    outline: 2px solid #000 !important;
+    outline-offset: 2px !important;
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+
+    .feature-card,
+    .info-card,
+    .product-split-card,
+    .capability-item {
+        border: 2px solid #000 !important;
+    }
+}
+
+

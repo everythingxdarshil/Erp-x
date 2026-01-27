@@ -1,0 +1,226 @@
+/* ============================================
+   PADDING NORMALIZATION - Desktop View Only
+   Source of Truth: index.html
+   ============================================ */
+
+/* 
+   BASELINE STANDARDS (from index.html):
+   - Section Vertical Padding: 64px (4rem) top and bottom
+   - Section Horizontal Padding: 32px (2rem) left and right
+   - Container Horizontal Padding: 24px (1.5rem) left and right
+   - Container Max Width: 1200px
+*/
+
+/* ============================================
+   GLOBAL SECTION PADDING NORMALIZATION
+   ============================================ */
+
+/* Apply consistent vertical and horizontal padding to ALL sections */
+section {
+    padding: var(--spacing-2xl) var(--spacing-lg) !important;
+    /* 64px (4rem) vertical, 32px (2rem) horizontal */
+}
+
+/* ============================================
+   PRODUCTS PAGE NORMALIZATION
+   ============================================ */
+
+/* Product Hero Section */
+.product-hero {
+    padding: var(--spacing-2xl) var(--spacing-lg) !important;
+}
+
+/* Unified Core Section */
+.unified-core-section {
+    padding: var(--spacing-2xl) var(--spacing-lg) !important;
+}
+
+/* Modules Section */
+.modules-section {
+    padding: var(--spacing-2xl) var(--spacing-lg) !important;
+}
+
+/* Teams Section */
+.teams-section {
+    padding: var(--spacing-2xl) var(--spacing-lg) !important;
+}
+
+/* Capabilities Section */
+.capabilities-section {
+    padding: var(--spacing-2xl) var(--spacing-lg) !important;
+}
+
+/* Product CTA Section */
+.product-cta-section {
+    padding: var(--spacing-2xl) var(--spacing-lg) !important;
+}
+
+/* ============================================
+   PRICING PAGE NORMALIZATION
+   ============================================ */
+
+/* Pricing Hero Section */
+.pricing-hero {
+    padding: var(--spacing-2xl) var(--spacing-lg) !important;
+}
+
+/* Pricing Calculator Section */
+.pricing-calculator-section {
+    padding: var(--spacing-2xl) var(--spacing-lg) !important;
+}
+
+/* FAQ Section */
+.faq-section {
+    padding: var(--spacing-2xl) var(--spacing-lg) !important;
+}
+
+/* Pricing CTA Section */
+.pricing-cta-section {
+    padding: var(--spacing-2xl) var(--spacing-lg) !important;
+}
+
+/* ============================================
+   ABOUT US PAGE NORMALIZATION
+   ============================================ */
+
+/* About Hero Section */
+.about-hero {
+    padding: var(--spacing-2xl) var(--spacing-lg) !important;
+}
+
+/* Mission Section */
+.mission-section {
+    padding: var(--spacing-2xl) var(--spacing-lg) !important;
+}
+
+/* Values Section */
+.values-section {
+    padding: var(--spacing-2xl) var(--spacing-lg) !important;
+}
+
+/* Team Section */
+.team-section {
+    padding: var(--spacing-2xl) var(--spacing-lg) !important;
+}
+
+/* ============================================
+   CONTACT PAGE NORMALIZATION
+   ============================================ */
+
+/* Contact Section */
+.contact-section {
+    padding: var(--spacing-2xl) var(--spacing-lg) !important;
+}
+
+/* Contact Form Section */
+.contact-form-section {
+    padding: var(--spacing-2xl) var(--spacing-lg) !important;
+}
+
+/* ============================================
+   INDUSTRIES PAGE NORMALIZATION
+   ============================================ */
+
+/* Industries Hero Section */
+.industries-hero {
+    padding: var(--spacing-2xl) var(--spacing-lg) !important;
+}
+
+/* Industries Section */
+.industries-section {
+    padding: var(--spacing-2xl) var(--spacing-lg) !important;
+}
+
+/* Industry Selector Wrapper */
+.industry-selector-wrapper {
+    padding: var(--spacing-2xl) var(--spacing-lg) !important;
+}
+
+/* ============================================
+   HR & PAYROLL PAGE NORMALIZATION
+   ============================================ */
+
+/* HR Hero Section */
+.hr-hero {
+    padding: var(--spacing-2xl) var(--spacing-lg) !important;
+}
+
+/* HR Features Section */
+.hr-features-section {
+    padding: var(--spacing-2xl) var(--spacing-lg) !important;
+}
+
+/* ============================================
+   CONTAINER PADDING CONSISTENCY
+   ============================================ */
+
+/* Ensure all containers maintain consistent horizontal padding */
+.container {
+    padding-left: var(--section-padding-horizontal) !important;
+    padding-right: var(--section-padding-horizontal) !important;
+    /* 24px (1.5rem) horizontal padding */
+}
+
+/* ============================================
+   EXCEPTIONS - Special Cases
+   ============================================ */
+
+/* Newsletter Section - Slightly reduced padding as per index.html */
+.newsletter-section {
+    padding: 3rem var(--spacing-lg) !important;
+    /* 48px vertical, 32px horizontal */
+}
+
+/* Footer - Maintain index.html footer padding */
+.footer {
+    padding: var(--spacing-2xl) var(--spacing-lg) 0 var(--spacing-lg) !important;
+    /* 64px top, 32px horizontal, 0 bottom */
+}
+
+/* Logo Slider Section - Maintain index.html padding */
+.logo-slider-section {
+    padding: var(--spacing-2xl) var(--spacing-lg) !important;
+}
+
+/* ============================================
+   RESPONSIVE OVERRIDE - Desktop Only
+   ============================================ */
+
+/* Apply these normalizations ONLY on desktop view (≥1025px) */
+@media screen and (max-width: 1024px) {
+
+    /* Disable all !important overrides on mobile/tablet */
+    section,
+    .product-hero,
+    .unified-core-section,
+    .modules-section,
+    .teams-section,
+    .capabilities-section,
+    .product-cta-section,
+    .pricing-hero,
+    .pricing-calculator-section,
+    .faq-section,
+    .pricing-cta-section,
+    .about-hero,
+    .mission-section,
+    .values-section,
+    .team-section,
+    .contact-section,
+    .contact-form-section,
+    .industries-hero,
+    .industries-section,
+    .industry-selector-wrapper,
+    .hr-hero,
+    .hr-features-section,
+    .newsletter-section,
+    .footer,
+    .logo-slider-section {
+        padding: revert !important;
+        /* Revert to mobile-responsive.css values */
+    }
+
+    .container {
+        padding-left: revert !important;
+        padding-right: revert !important;
+    }
+}

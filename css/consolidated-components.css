@@ -1,0 +1,1503 @@
+﻿/* ============================================
+   CONSOLIDATED COMPONENTS
+   Merged from: modal.css, fullscreen-modal.css, custom-icons.css, megamenu.css
+   ============================================ */
+
+/* ============================================
+   FROM: modal.css
+   ============================================ */
+
+/* ============================================
+   MODAL SYSTEM - TWO-STEP FLOW
+   ============================================ */
+
+/* Modal Overlay */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    padding: 1rem;
+}
+
+.modal-overlay.active {
+    display: flex;
+    opacity: 1;
+}
+
+/* Modal Container */
+.modal-container {
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    max-width: 500px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    transform: scale(0.9) translateY(20px);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-overlay.active .modal-container {
+    transform: scale(1) translateY(0);
+}
+
+.modal-container.modal-large {
+    max-width: 700px;
+}
+
+/* Modal Header */
+.modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 2rem;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.modal-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 0;
+}
+
+.modal-close {
+    background: none;
+    border: none;
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #64748b;
+    transition: all 0.2s ease;
+}
+
+.modal-close:hover {
+    background: #f1f5f9;
+    color: #1e293b;
+}
+
+.modal-close:active {
+    transform: scale(0.95);
+}
+
+/* Modal Body */
+.modal-body {
+    padding: 2rem;
+}
+
+/* Form Styling */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #1e293b;
+    margin-bottom: 0.5rem;
+}
+
+.required {
+    color: #ef4444;
+}
+
+.optional {
+    color: #64748b;
+    font-weight: 400;
+    font-size: 0.8rem;
+}
+
+.form-input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: 'Geist', sans-serif;
+    color: #1e293b;
+    background: #ffffff;
+    transition: all 0.2s ease;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: #9dba3a;
+    box-shadow: 0 0 0 3px rgba(157, 186, 58, 0.1);
+}
+
+.form-input.error {
+    border-color: #ef4444;
+}
+
+.form-input.error:focus {
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+.error-message {
+    display: block;
+    color: #ef4444;
+    font-size: 0.8rem;
+    margin-top: 0.4rem;
+    min-height: 1.2rem;
+    font-weight: 500;
+}
+
+/* Modal Footer */
+.modal-footer {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #e2e8f0;
+}
+
+.footer-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+}
+
+/* Buttons */
+.btn-submit {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.875rem 1.5rem;
+    background: linear-gradient(135deg, #bfd84a 0%, #9dba3a 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: 'Geist', sans-serif;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(157, 186, 58, 0.3);
+    width: 100%;
+}
+
+.btn-submit:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(157, 186, 58, 0.4);
+}
+
+.btn-submit:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+.btn-submit:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+.btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.875rem 1.5rem;
+    background: #f1f5f9;
+    color: #1e293b;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: 'Geist', sans-serif;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-secondary:hover {
+    background: #e2e8f0;
+    border-color: #cbd5e1;
+}
+
+/* Confirmation Section Styling */
+.confirmation-section {
+    margin-bottom: 2rem;
+}
+
+.confirmation-section:last-child {
+    margin-bottom: 0;
+}
+
+.section-heading {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 0 0 1rem 0;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+/* Detail Grid */
+.detail-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.detail-item {
+    background: #f8fafc;
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+}
+
+.detail-label {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.4rem;
+}
+
+.detail-value {
+    display: block;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1e293b;
+}
+
+/* Modules List */
+.modules-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+
+.module-item {
+    background: #ffffff;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.2s ease;
+}
+
+.module-item:hover {
+    border-color: #9dba3a;
+    box-shadow: 0 2px 8px rgba(157, 186, 58, 0.1);
+}
+
+.module-info {
+    flex: 1;
+}
+
+.module-name {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 0.25rem;
+}
+
+.module-details {
+    font-size: 0.875rem;
+    color: #64748b;
+}
+
+.module-total {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: #9dba3a;
+}
+
+/* Billing Summary */
+.billing-summary {
+    background: #f8fafc;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.25rem;
+    margin-top: 1rem;
+}
+
+.billing-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0;
+}
+
+.billing-item.total-amount {
+    padding-top: 1rem;
+    margin-top: 0.75rem;
+    border-top: 2px solid #e2e8f0;
+}
+
+.billing-label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.billing-value {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #1e293b;
+}
+
+.billing-value.grand-total {
+    font-size: 1.5rem;
+    color: #9dba3a;
+}
+
+/* Mobile Responsiveness */
+@media screen and (max-width: 640px) {
+    .modal-container {
+        max-width: 100%;
+        border-radius: 16px 16px 0 0;
+        max-height: 95vh;
+    }
+
+    .modal-header {
+        padding: 1.25rem 1.5rem;
+    }
+
+    .modal-title {
+        font-size: 1.25rem;
+    }
+
+    .modal-body {
+        padding: 1.5rem;
+    }
+
+    .detail-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-actions {
+        flex-direction: column-reverse;
+        gap: 0.75rem;
+    }
+
+    .btn-submit,
+    .btn-secondary {
+        width: 100%;
+    }
+
+    .modal-container.modal-large {
+        max-width: 100%;
+    }
+}
+
+/* Smooth Scrollbar */
+.modal-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.modal-container::-webkit-scrollbar-track {
+    background: #f1f5f9;
+    border-radius: 8px;
+}
+
+.modal-container::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 8px;
+}
+
+.modal-container::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+
+/* Accessibility */
+.modal-overlay:focus-within .modal-container {
+    outline: 2px solid #9dba3a;
+    outline-offset: 4px;
+}
+
+/* Prevent body scroll when modal is open */
+body.modal-open {
+    overflow: hidden;
+}
+
+/* ============================================
+   FROM: fullscreen-modal.css
+   ============================================ */
+
+/* ============================================
+   FULLSCREEN SIDE-BY-SIDE MODAL SYSTEM
+   ============================================ */
+
+/* Prevent body scroll when modal is open */
+body.modal-open {
+    overflow: hidden;
+    height: 100vh;
+}
+
+/* Fullscreen Modal Overlay - Blurred Background */
+.modal-overlay-fullscreen {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(9, 19, 21, 0.3);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    z-index: 10000;
+    overflow: hidden;
+}
+
+.modal-overlay-fullscreen.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    .modal-overlay-fullscreen.active {
+        animation: none;
+    }
+
+    * {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Fullscreen Container */
+.modal-fullscreen-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+/* Close Button (Top Right) */
+.modal-close-fullscreen {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    background: white;
+    border: none;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    z-index: 10001;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.modal-close-fullscreen:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.modal-close-fullscreen svg {
+    color: #091315;
+}
+
+/* Split Layout Container */
+.modal-split-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    width: 100%;
+    max-width: 1400px;
+    height: 100%;
+    max-height: 800px;
+}
+
+/* Individual Panels */
+.modal-panel {
+    background: white;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+/* Left Panel (User Details) */
+.modal-panel-left {
+    border: 3px solid #BFD84A;
+}
+
+/* Right Panel (Confirmation) - Initially Disabled */
+.modal-panel-right {
+    opacity: 0.5;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.modal-panel-right.enabled {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Panel Content */
+.panel-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+}
+
+/* ============================================
+   SYNCHRONIZED ANIMATIONS FOR BOTH PANELS
+   ============================================ */
+
+/* Left Panel (Your Details) - Slide Out Animation */
+.panel-content.slide-out-left {
+    animation: slideOutLeft 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Left Panel (Summary View) - Slide In Animation */
+.panel-content.slide-in-left {
+    animation: slideInLeft 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Right Panel - Slide In Animation */
+.modal-panel-right.slide-in-right {
+    animation: slideInRight 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Right Panel - Slide Out Animation (for back button) */
+.modal-panel-right.slide-out-right {
+    animation: slideOutRight 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Keyframe Animations */
+@keyframes slideOutLeft {
+    0% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+}
+
+@keyframes slideInLeft {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInRight {
+    0% {
+        transform: translateX(100%) scale(0.95);
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: translateX(0) scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOutRight {
+    0% {
+        transform: translateX(0) scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(100%) scale(0.95);
+        opacity: 0;
+    }
+}
+
+/* Right Panel Initial State */
+.modal-panel-right {
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    position: relative;
+}
+
+.modal-panel-right.visible {
+    display: flex;
+    visibility: visible;
+}
+
+.modal-panel-right.enabled {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-panel-right.enabled::before {
+    opacity: 0;
+}
+
+.panel-header {
+    padding: 1.3rem 2.5rem 0.8rem;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.panel-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #091315;
+    margin: 0;
+    letter-spacing: -0.02em;
+}
+
+/* Panel Body */
+.panel-body {
+    flex: 1;
+    padding: 0.8rem 2.5rem;
+    overflow-y: auto;
+}
+
+/* Panel Footer */
+.panel-footer {
+    padding: 0.8rem 2.5rem;
+    border-top: 1px solid #e2e8f0;
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+}
+
+/* Form Styles */
+.form-group {
+    margin-bottom: 0.3rem;
+}
+
+.form-label {
+    display: block;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: #091315;
+    margin-bottom: 0.2rem;
+}
+
+.form-label .required {
+    color: #ef4444;
+}
+
+.form-label .optional {
+    color: #64748b;
+    font-weight: 400;
+}
+
+.form-input {
+    width: 100%;
+    padding: 0.55rem 1rem;
+    font-size: 1rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 0.5rem;
+    transition: all 0.2s ease;
+    font-family: 'Geist', sans-serif;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: #BFD84A;
+    box-shadow: 0 0 0 3px rgba(191, 216, 74, 0.1);
+}
+
+.form-input.error {
+    border-color: #ef4444;
+}
+
+.error-message {
+    display: block;
+    color: #ef4444;
+    font-size: 0.875rem;
+    margin-top: 0.2rem;
+}
+
+/* Summary Cards (After Form Submission) */
+.details-summary-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.summary-card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.75rem;
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.summary-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.summary-value {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #091315;
+}
+
+/* Ensure company card displays properly when visible */
+#summaryCompanyCard {
+    display: none !important;
+}
+
+#summaryCompanyCard[style*="display: block"] {
+    display: flex !important;
+    flex-direction: column;
+}
+
+/* Back Button in Summary View */
+.summary-back-button {
+    margin-top: 1rem;
+    padding: 0.875rem 1.75rem;
+    font-size: 1rem;
+    font-weight: 500;
+    font-family: 'Geist', sans-serif;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border: 1px solid #e2e8f0;
+    background-color: #f1f5f9;
+    color: #091315;
+    width: 100%;
+}
+
+.summary-back-button:hover {
+    background-color: #e2e8f0;
+    transform: translateY(-1px);
+}
+
+.summary-back-button svg {
+    width: 16px;
+    height: 16px;
+}
+
+/* Confirmation Section */
+.confirmation-section {
+    margin-bottom: 2rem;
+}
+
+.section-heading {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #091315;
+    margin: 0 0 1.5rem 0;
+    letter-spacing: -0.01em;
+}
+
+/* Modules List */
+.modules-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+
+.module-item {
+    background: #f8fafc;
+    border: 2px solid #BFD84A;
+    border-radius: 0.75rem;
+    padding: 1rem 1.25rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.module-info {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex: 1;
+}
+
+.module-name {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #091315;
+}
+
+.module-users {
+    font-size: 0.875rem;
+    color: #64748b;
+    white-space: nowrap;
+}
+
+.module-price {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: #BFD84A;
+    white-space: nowrap;
+}
+
+/* Billing Summary */
+.billing-summary {
+    background: #f8fafc;
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.billing-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.billing-label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.billing-value {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #091315;
+}
+
+.billing-item.total-amount {
+    padding-top: 1rem;
+    border-top: 2px solid #e2e8f0;
+}
+
+.billing-item.total-amount .billing-label {
+    font-size: 1rem;
+    color: #091315;
+}
+
+.billing-item.total-amount .grand-total {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #BFD84A;
+}
+
+/* Buttons */
+.btn-submit,
+.btn-secondary {
+    padding: 0.875rem 1.75rem;
+    font-size: 1rem;
+    font-weight: 500;
+    font-family: 'Geist', sans-serif;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: none;
+    letter-spacing: -0.01em;
+}
+
+.btn-submit {
+    background-color: #BFD84A;
+    color: #091315;
+    box-shadow: 0 2px 8px rgba(191, 216, 74, 0.3);
+}
+
+.btn-submit:hover:not(:disabled) {
+    background-color: #9DBA3A;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(191, 216, 74, 0.4);
+}
+
+.btn-submit:disabled {
+    background-color: #e2e8f0;
+    color: #94a3b8;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+.btn-secondary {
+    background-color: #f1f5f9;
+    color: #091315;
+    border: 1px solid #e2e8f0;
+}
+
+.btn-secondary:hover {
+    background-color: #e2e8f0;
+    transform: translateY(-1px);
+}
+
+.btn-continue,
+.btn-confirm {
+    width: 100%;
+    justify-content: center;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1024px) {
+    .modal-split-layout {
+        grid-template-columns: 1fr;
+        max-height: none;
+        overflow-y: auto;
+    }
+
+    .modal-fullscreen-container {
+        padding: 1rem;
+        align-items: flex-start;
+        overflow-y: auto;
+    }
+
+    .modal-panel {
+        max-height: none;
+        height: auto;
+    }
+
+    .panel-body {
+        overflow-y: visible;
+        max-height: none;
+    }
+
+    .modal-close-fullscreen {
+        top: 1rem;
+        right: 1rem;
+        width: 40px;
+        height: 40px;
+    }
+
+    .panel-header {
+        padding: 1.5rem 1.5rem 1rem;
+    }
+
+    .panel-body {
+        padding: 1.5rem;
+    }
+
+    .panel-footer {
+        padding: 1rem 1.5rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .modal-fullscreen-container {
+        padding: 0.5rem;
+        height: 100%;
+        overflow-y: auto;
+    }
+
+    .modal-split-layout {
+        height: auto;
+        min-height: 100%;
+    }
+
+    .modal-panel {
+        height: auto;
+        min-height: calc(100vh - 1rem);
+    }
+
+    .panel-body {
+        overflow-y: visible;
+        flex: 1 1 auto;
+    }
+
+    .modal-close-fullscreen {
+        top: 0.75rem;
+        right: 0.75rem;
+    }
+
+    .panel-title {
+        font-size: 1.375rem;
+    }
+
+    .panel-header {
+        padding: 1.25rem 1.25rem 0.75rem;
+    }
+
+    .panel-body {
+        padding: 1.25rem;
+    }
+
+    .panel-footer {
+        padding: 1rem 1.25rem;
+        flex-direction: column;
+    }
+
+    .btn-submit,
+    .btn-secondary {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* ============================================
+   FROM: custom-icons.css
+   ============================================ */
+
+/* Feature Icons (SVG Replacement) */
+.feature-icon-circle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    /* Matches the dark-to-green gradient style found in stats banner */
+    background: linear-gradient(180deg, #091315 0%, #091315 60%, #aacc44 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--spacing-sm);
+    /* Keep the spacing we just adjusted */
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.feature-icon-svg {
+    width: 28px;
+    height: 28px;
+    fill: white;
+    display: block;
+}
+
+/* ============================================
+   FROM: megamenu.css
+   ============================================ */
+
+/* ============================================
+   MEGA MENU - Horizontal Grid Dropdown
+   ============================================ */
+
+/* Override default dropdown width for mega menu */
+.nav-dropdown-menu.mega-menu {
+    min-width: 850px !important;
+    width: auto !important;
+    padding: 1.5rem !important;
+    position: fixed !important;
+    top: 97px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    background: #ffffff !important;
+    border: 1px solid #e5e7eb !important;
+    border-radius: 0 0 12px 12px !important;
+    box-shadow: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transition: all 0.2s ease !important;
+    z-index: 1200 !important;
+}
+
+/* Force hide mega menu when clicked - overrides hover state */
+.products-dropdown.menu-clicked .nav-dropdown-menu.mega-menu,
+.industries-dropdown.menu-clicked .nav-dropdown-menu.mega-menu,
+.products-dropdown.menu-clicked:hover .nav-dropdown-menu.mega-menu,
+.industries-dropdown.menu-clicked:hover .nav-dropdown-menu.mega-menu {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    display: none !important;
+}
+
+/* Create invisible bridge between nav item and dropdown to prevent disappearing */
+.products-dropdown::before,
+.industries-dropdown::before {
+    content: '' !important;
+    position: absolute !important;
+    top: 100% !important;
+    left: 0 !important;
+    right: 0 !important;
+    height: 35px !important;
+    z-index: 1199 !important;
+    pointer-events: auto !important;
+    display: none !important;
+}
+
+.products-dropdown:hover::before,
+.industries-dropdown:hover::before {
+    display: block !important;
+}
+
+/* Products: 3 columns (matching Industries layout) */
+.products-dropdown .mega-menu-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 0.5rem !important;
+}
+
+/* Industries: 3 columns (3 in first row, 2 in second) */
+.industries-dropdown .mega-menu-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 0.5rem !important;
+}
+
+.mega-menu-item {
+    display: flex !important;
+    align-items: flex-start !important;
+    gap: 0.875rem !important;
+    padding: 1rem !important;
+    border-radius: 10px !important;
+    text-decoration: none !important;
+    transition: all 0.2s ease !important;
+    cursor: pointer !important;
+    background-color: transparent !important;
+    border: none !important;
+    width: auto !important;
+    flex-direction: row !important;
+}
+
+/* Override any conflicting styles from app.css */
+.mega-menu .mega-menu-item,
+.nav-dropdown-menu.mega-menu .mega-menu-item,
+.products-dropdown .mega-menu-item,
+.industries-dropdown .mega-menu-item {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: flex-start !important;
+}
+
+.mega-menu-item:hover {
+    background-color: #f8f9fa !important;
+    transform: translateY(-2px) !important;
+}
+
+.mega-menu-icon {
+    flex-shrink: 0 !important;
+    width: 42px !important;
+    height: 42px !important;
+    background: #000000 !important;
+    border-radius: 10px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    transition: all 0.2s ease !important;
+}
+
+/* Ensure all icons have black background by default */
+.mega-menu-item .mega-menu-icon,
+.products-dropdown .mega-menu-icon,
+.industries-dropdown .mega-menu-icon {
+    background: #000000 !important;
+}
+
+.mega-menu-item:hover .mega-menu-icon {
+    background: #000000 !important;
+    transform: scale(1.05) !important;
+}
+
+.mega-menu-icon svg {
+    width: 20px !important;
+    height: 20px !important;
+    stroke: #FFFFFF !important;
+    stroke-width: 2.5 !important;
+    fill: none !important;
+    transition: stroke 0.2s ease !important;
+    color: #FFFFFF !important;
+}
+
+.mega-menu-icon svg * {
+    stroke: #FFFFFF !important;
+}
+
+.mega-menu-item:hover .mega-menu-icon svg {
+    stroke: #D7FF53 !important;
+    color: #D7FF53 !important;
+}
+
+.mega-menu-item:hover .mega-menu-icon svg * {
+    stroke: #D7FF53 !important;
+}
+
+.mega-menu-content {
+    flex: 1 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.25rem !important;
+}
+
+.mega-menu-content h4 {
+    font-size: 0.925rem !important;
+    font-weight: 600 !important;
+    color: #000000 !important;
+    margin: 0 !important;
+    line-height: 1.3 !important;
+    text-align: left !important;
+}
+
+.mega-menu-content p {
+    font-size: 0.8rem !important;
+    color: #666666 !important;
+    margin: 0 !important;
+    line-height: 1.4 !important;
+    text-align: left !important;
+}
+
+/* Desktop only - ensure mega menu shows on hover */
+@media (min-width: 1025px) {
+    .products-dropdown:hover .nav-dropdown-menu.mega-menu {
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: translateX(-50%) translateY(0) !important;
+    }
+
+    .industries-dropdown:hover .nav-dropdown-menu.mega-menu {
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: translateX(-50%) translateY(0) !important;
+    }
+}
+
+/* Tablet adjustments */
+@media (max-width: 1024px) and (min-width: 768px) {
+    .nav-dropdown-menu.mega-menu {
+        min-width: 700px !important;
+        left: 50% !important;
+        transform: translateX(-50%) translateY(10px) !important;
+    }
+
+    .products-dropdown .mega-menu-grid {
+        grid-template-columns: repeat(3, 1fr) !important;
+    }
+
+    .industries-dropdown .mega-menu-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    /* Disable hover effect on tablet - will use click instead */
+    .products-dropdown:hover .nav-dropdown-menu.mega-menu,
+    .industries-dropdown:hover .nav-dropdown-menu.mega-menu {
+        opacity: 0 !important;
+        visibility: hidden !important;
+    }
+
+    /* Show dropdown when active class is added via JavaScript */
+    .products-dropdown.active .nav-dropdown-menu.mega-menu,
+    .industries-dropdown.active .nav-dropdown-menu.mega-menu {
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: translateX(-50%) translateY(0) !important;
+    }
+
+    /* Add visual indicator (underline) for clickable dropdown items in tablet view */
+    .products-dropdown .dropdown-trigger,
+    .industries-dropdown .dropdown-trigger {
+        position: relative;
+    }
+
+    /* Show underline when dropdown is active (open) */
+    .products-dropdown.active .dropdown-trigger,
+    .industries-dropdown.active .dropdown-trigger {
+        border-bottom: 2px solid #000000;
+    }
+}
+
+/* iPad Mini specific adjustments (768x1024) - Make dropdown feel part of navbar */
+@media (min-width: 768px) and (max-width: 768px) and (min-height: 1024px) and (max-height: 1024px) {
+    .nav-dropdown-menu.mega-menu {
+        border-radius: 0 0 12px 12px !important;
+        border-top: none !important;
+        transform: translateX(-50%) translateY(0px) !important;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
+    }
+
+    .products-dropdown.active .nav-dropdown-menu.mega-menu,
+    .industries-dropdown.active .nav-dropdown-menu.mega-menu {
+        transform: translateX(-50%) translateY(0px) !important;
+    }
+}
+
+/* Mobile - stack vertically */
+@media (max-width: 767px) {
+    .mega-menu {
+        min-width: 100% !important;
+        width: 100%;
+        padding: 1rem !important;
+    }
+
+    .mega-menu-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .mega-menu-item {
+        padding: 0.875rem;
+    }
+
+    .mega-menu-icon {
+        width: 38px;
+        height: 38px;
+    }
+
+    .mega-menu-icon svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    .mega-menu-content h4 {
+        font-size: 0.875rem;
+    }
+
+    .mega-menu-content p {
+        font-size: 0.75rem;
+    }
+}
+
+/* ============================================
+   MOBILE MEGA MENU STYLES
+   ============================================ */
+
+.mobile-mega-menu {
+    background: #ffffff !important;
+    padding: 0.5rem 0 !important;
+}
+
+.mobile-mega-item {
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.875rem !important;
+    padding: 0.875rem 1rem !important;
+    text-decoration: none !important;
+    transition: background-color 0.2s ease !important;
+    border-bottom: 1px solid #e0e0e0 !important;
+}
+
+.mobile-mega-item:last-child {
+    border-bottom: none !important;
+}
+
+.mobile-mega-item:hover,
+.mobile-mega-item:active {
+    background-color: #f8f9fa !important;
+}
+
+.mobile-mega-icon {
+    flex-shrink: 0 !important;
+    width: 36px !important;
+    height: 36px !important;
+    background: #000000 !important;
+    border-radius: 8px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    transition: all 0.2s ease !important;
+}
+
+.mobile-mega-item:hover .mobile-mega-icon,
+.mobile-mega-item:active .mobile-mega-icon {
+    transform: scale(1.05) !important;
+}
+
+.mobile-mega-icon svg {
+    width: 18px !important;
+    height: 18px !important;
+    stroke: #FFFFFF !important;
+    stroke-width: 2.5 !important;
+    fill: none !important;
+    transition: stroke 0.2s ease !important;
+}
+
+.mobile-mega-icon svg * {
+    stroke: #FFFFFF !important;
+}
+
+.mobile-mega-item:hover .mobile-mega-icon svg,
+.mobile-mega-item:active .mobile-mega-icon svg {
+    stroke: #D7FF53 !important;
+}
+
+.mobile-mega-item:hover .mobile-mega-icon svg *,
+.mobile-mega-item:active .mobile-mega-icon svg * {
+    stroke: #D7FF53 !important;
+}
+
+.mobile-mega-content {
+    flex: 1 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.2rem !important;
+}
+
+.mobile-mega-content h5 {
+    font-size: 0.9rem !important;
+    font-weight: 600 !important;
+    color: #000000 !important;
+    margin: 0 !important;
+    line-height: 1.3 !important;
+}
+
+.mobile-mega-content p {
+    font-size: 0.75rem !important;
+    color: #666666 !important;
+    margin: 0 !important;
+    line-height: 1.4 !important;
+}
+
+/* Ensure mobile dropdown menu shows icons properly */
+@media (max-width: 1024px) {
+    .mobile-dropdown .mobile-mega-menu {
+        position: static;
+        transform: none;
+        opacity: 0;
+        visibility: hidden;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+        margin-top: 0.5rem;
+        box-shadow: none;
+        border: 1px solid #e0e0e0;
+        border-radius: 8px;
+    }
+
+    .mobile-dropdown.active .mobile-mega-menu {
+        opacity: 1;
+        visibility: visible;
+        max-height: 600px;
+    }
+}
+
+
