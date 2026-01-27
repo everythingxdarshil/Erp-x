@@ -1480,10 +1480,7 @@ iframe {
         margin-right: auto !important;
     }
 
-    /* Hide CTA buttons if they exist */
-    section.newsletter-section .newsletter-content .cta-buttons {
-        display: none !important;
-    }
+
 
     /* Match index.html form styles */
     section.newsletter-section .newsletter-container .newsletter-content .newsletter-form {
