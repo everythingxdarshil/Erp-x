@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Complete sales and finance management. Create invoices, track expenses, manage quotes, and gain financial insights with powerful accounting tools.">
+    <title>Sales - Finance & Accounting Management | ERPX Solutions</title>
+    <link rel="icon" type="image/png" href="assets/logo/favicon.png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/mobile-responsive.css">
+    <link rel="stylesheet" href="css/consolidated-components.css">
+    <link rel="stylesheet" href="css/hr-payroll.css">
+
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Header / Navigation Placeholder -->
+    <div id="header-container"></div>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text" data-aos="fade-right">
+                    <div class="hero-badge">
+                        <svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path
+                                d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-6 13H7v-2h6v2zm0-4H7v-2h6v2zm0-4H7V7h6v2zm4 8h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2V7h2v2z">
+                            </path>
+                        </svg>
+                        <span>Sales</span>
+                    </div>
+                    <h1 class="hero-title">Streamline Finances With <span class="highlight">Smart Accounting</span></h1>
+                    <p class="hero-description">Manage invoices, track expenses, automate accounting workflows, and make
+                        data-driven financial decisions with real-time insights and reporting.</p>
+                    <div class="hero-cta">
+                        <a href="contact.html" class="btn btn-primary btn-large">Get Started For Free</a>
+                        <a href="contact.html" class="btn btn-secondary btn-large">Book a Free Demo</a>
+                    </div>
+                </div>
+                <div class="hero-visual" data-aos="fade-left">
+                    <img src="assets/modules/hr-hero.png" alt="Sales & Finance Dashboard" class="dashboard-img"
+                        onerror="this.src='assets/home/hero-1.jpg'">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust & Certifications Section -->
+    <section class="certifications-section" data-aos="fade-up">
+        <div class="container">
+            <div class="certifications-container">
+                <div class="certifications-content">
+                    <div class="cert-logo">
+                        <img src="assets/logo/weekmate-logo.png" alt="Logo" class="cert-logo-image"
+                            onerror="this.src='assets/logo/favicon.png'">
+                    </div>
+                    <div class="cert-text">
+                        <h2 class="cert-title">Certified To Deliver.<br>Trusted To Lead.</h2>
+                    </div>
+                </div>
+                <div class="cert-arrow">
+                    <svg class="arrow-icon" viewBox="0 0 80 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M2 12H78M78 12L68 4M78 12L68 20" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </div>
+                <div class="certifications-badges">
+                    <div class="cert-badge" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="badge-logo-wrapper">
+                            <img src="assets/certifications/hipaa.png" alt="HIPAA Compliant" class="cert-badge-logo">
+                        </div>
+                    </div>
+                    <div class="cert-badge" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="badge-logo-wrapper">
+                            <img src="assets/certifications/gdpr.png" alt="GDPR Ready" class="cert-badge-logo">
+                        </div>
+                    </div>
+                    <div class="cert-badge" data-aos="zoom-in" data-aos-delay="300">
+                        <div class="badge-logo-wrapper">
+                            <img src="assets/certifications/aicpa-soc.png" alt="AICPA SOC" class="cert-badge-logo">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Section -->
+    <section class="why-choose-section" data-aos="fade-up">
+        <div class="container">
+            <div class="why-choose-header">
+                <h2 class="section-title">Why Choose ERPX Sales & Finance?</h2>
+                <p class="section-subtitle">From invoicing to financial reports, ERPX gives you complete visibility and
+                    control over your business finances.</p>
+            </div>
+            <div class="why-choose-content">
+                <div class="benefits-tabs">
+                    <button class="benefit-tab active" data-tab="invoicing">
+                        <svg class="tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                            <line x1="3" y1="9" x2="21" y2="9"></line>
+                            <line x1="9" y1="21" x2="9" y2="9"></line>
+                        </svg>
+                        <span>Invoicing</span>
+                    </button>
+                    <button class="benefit-tab" data-tab="expenses">
+                        <svg class="tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="12" y1="1" x2="12" y2="23"></line>
+                            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                        </svg>
+                        <span>Expense Tracking</span>
+                    </button>
+                    <button class="benefit-tab" data-tab="reports">
+                        <svg class="tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="12" y1="20" x2="12" y2="10"></line>
+                            <line x1="18" y1="20" x2="18" y2="4"></line>
+                            <line x1="6" y1="20" x2="6" y2="16"></line>
+                        </svg>
+                        <span>Financial Reports</span>
+                    </button>
+                    <button class="benefit-tab" data-tab="tax">
+                        <svg class="tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                            <polyline points="14 2 14 8 20 8"></polyline>
+                            <line x1="16" y1="13" x2="8" y2="13"></line>
+                            <line x1="16" y1="17" x2="8" y2="17"></line>
+                            <polyline points="10 9 9 9 8 9"></polyline>
+                        </svg>
+                        <span>Tax Management</span>
+                    </button>
+                    <button class="benefit-tab" data-tab="reconciliation">
+                        <svg class="tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+                            <line x1="1" y1="10" x2="23" y2="10"></line>
+                        </svg>
+                        <span>Bank Reconciliation</span>
+                    </button>
+                </div>
+
+                <div class="benefits-content">
+                    <div class="benefit-panel active" data-panel="invoicing">
+                        <h3>Professional Invoicing, Simplified</h3>
+                        <p>Create beautiful, professional invoices in seconds. Set up recurring billing, send automatic
+                            payment reminders, and get paid faster with integrated payment gateways.</p>
+                        <img src="assets/modules/hr-workflow.png" alt="Invoicing" class="benefit-image">
+                    </div>
+                    <div class="benefit-panel" data-panel="expenses">
+                        <h3>Track Every Dollar</h3>
+                        <p>Capture receipts on mobile, categorize expenses automatically, and approve reimbursements
+                            with a click. Get complete visibility into where money is going.</p>
+                        <img src="assets/modules/hr-attendance.png" alt="Expense Tracking" class="benefit-image">
+                    </div>
+                    <div class="benefit-panel" data-panel="reports">
+                        <h3>Real-Time Financial Insights</h3>
+                        <p>Generate profit & loss statements, balance sheets, cash flow reports, and custom financial
+                            reports in real-time. Make informed decisions with accurate data.</p>
+                        <img src="assets/modules/hr-insights.png" alt="Financial Reports" class="benefit-image">
+                    </div>
+                    <div class="benefit-panel" data-panel="tax">
+                        <h3>Automated Tax Calculation</h3>
+                        <p>Automatically calculate VAT, GST, and sales tax on invoices. Generate tax reports and stay
+                            compliant with local regulations effortlessly.</p>
+                        <img src="assets/modules/hr-scale.png" alt="Tax Management" class="benefit-image">
+                    </div>
+                    <div class="benefit-panel" data-panel="reconciliation">
+                        <h3>One-Click Bank Reconciliation</h3>
+                        <p>Connect bank accounts, import transactions automatically, and reconcile accounts in minutes
+                            instead of hours. Match transactions with AI-powered suggestions.</p>
+                        <img src="assets/modules/hr-portal.png" alt="Bank Reconciliation" class="benefit-image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section" data-aos="fade-up">
+        <div class="container">
+            <div class="features-header">
+                <h2 class="section-title">Complete Sales & Finance Suite</h2>
+                <p class="section-subtitle">Everything you need to manage your business finances professionally</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                            <line x1="3" y1="9" x2="21" y2="9"></line>
+                            <line x1="9" y1="21" x2="9" y2="9"></line>
+                        </svg>
+                    </div>
+                    <h3>Invoices & Quotations</h3>
+                    <p>Create professional invoices, send quotes instantly, and convert estimates to invoices with one
+                        click.</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="12" y1="1" x2="12" y2="23"></line>
+                            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                        </svg>
+                    </div>
+                    <h3>Expense Management</h3>
+                    <p>Track expenses, capture receipts, manage vendor bills, and approve reimbursements seamlessly.</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="12" y1="20" x2="12" y2="10"></line>
+                            <line x1="18" y1="20" x2="18" y2="4"></line>
+                            <line x1="6" y1="20" x2="6" y2="16"></line>
+                        </svg>
+                    </div>
+                    <h3>Financial Reporting</h3>
+                    <p>Auto-generated P&L, balance sheets, cash flow statements, and custom financial dashboards.</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+                            <line x1="1" y1="10" x2="23" y2="10"></line>
+                        </svg>
+                    </div>
+                    <h3>Bank Reconciliation</h3>
+                    <p>Auto-import bank transactions, match payments intelligently, and reconcile accounts effortlessly.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Implementation Steps -->
+    <section class="implementation-section" data-aos="fade-up">
+        <div class="container">
+            <div class="implementation-header">
+                <h2 class="section-title">ERPX Sales Implementation Steps</h2>
+                <p class="section-subtitle">Get your accounting processes automated and optimized quickly.</p>
+            </div>
+            <div class="implementation-steps">
+                <div class="step-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="step-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                            <polyline points="14 2 14 8 20 8"></polyline>
+                        </svg>
+                    </div>
+                    <div class="step-number">#1</div>
+                    <h3>Discovery - Understand Your Accounting</h3>
+                    <p>We review your current accounting processes, chart of accounts, and reporting needs to configure
+                        the system correctly.</p>
+                </div>
+                <div class="step-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="step-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                            <line x1="8" y1="21" x2="16" y2="21"></line>
+                            <line x1="12" y1="17" x2="12" y2="21"></line>
+                        </svg>
+                    </div>
+                    <div class="step-number">#2</div>
+                    <h3>Setup - Quick Configuration</h3>
+                    <p>Import chart of accounts, configure tax rules, connect bank accounts, and set up invoice
+                        templates—all ready within days.</p>
+                </div>
+                <div class="step-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="step-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="9" cy="7" r="4"></circle>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        </svg>
+                    </div>
+                    <div class="step-number">#3</div>
+                    <h3>Training - Empower Your Team</h3>
+                    <p>Comprehensive training for finance teams, approval workflows setup, and best practices
+                        documentation for smooth operations.</p>
+                </div>
+                <div class="step-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="step-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                        </svg>
+                    </div>
+                    <div class="step-number">#4</div>
+                    <h3>Go Live - Start Automating</h3>
+                    <p>Launch with full support, monitor financial workflows, and optimize processes based on usage
+                        patterns and feedback.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section" data-aos="fade-up">
+        <div class="container">
+            <div class="testimonials-header">
+                <h2 class="section-title">Trusted by Finance Teams</h2>
+            </div>
+            <div class="swiper testimonials-swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <div class="testimonial-icon">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z" />
+                                </svg>
+                            </div>
+                            <p class="testimonial-text">"We closed our books 3x faster with ERPX automation. Bank
+                                reconciliation that used to take hours now takes minutes."</p>
+                            <div class="testimonial-author">
+                                <div>
+                                    <div class="author-name">Amanda Peterson</div>
+                                    <div class="author-role">CFO, RetailPlus</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <div class="testimonial-icon">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z" />
+                                </svg>
+                            </div>
+                            <p class="testimonial-text">"The automated invoicing and payment reminders improved our cash
+                                flow dramatically. We get paid 40% faster now."</p>
+                            <div class="testimonial-author">
+                                <div>
+                                    <div class="author-name">Mark Stevens</div>
+                                    <div class="author-role">Finance Director, ServiceCo</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <div class="testimonial-icon">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z" />
+                                </svg>
+                            </div>
+                            <p class="testimonial-text">"Real-time financial reports give us the insights we need to
+                                make quick decisions. The dashboard is incredibly intuitive."</p>
+                            <div class="testimonial-author">
+                                <div>
+                                    <div class="author-name">Karen Johnson</div>
+                                    <div class="author-role">Controller, Manufacturing Ltd</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section" data-aos="fade-up">
+        <div class="container">
+            <div class="faq-header">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <p class="section-subtitle">ERPX help you keep track of their work and improve their productivity.</p>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Can I import data from QuickBooks or Xero?</span>
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="12" y1="5" x2="12" y2="19"></line>
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes! We support data migration from QuickBooks, Xero, Sage, FreshBooks, and other accounting
+                            platforms. Our team handles the entire migration process.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>How does bank reconciliation work?</span>
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="12" y1="5" x2="12" y2="19"></line>
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Connect your bank accounts securely, and transactions are imported automatically daily. Our
+                            AI suggests matches, and you approve with one click. Reconciliation is done in minutes.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Is ERPX Sales compliant with accounting standards?</span>
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="12" y1="5" x2="12" y2="19"></line>
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes, ERPX follows GAAP and IFRS standards. All reports are audit-ready, and the system
+                            includes built-in controls for compliance with tax regulations across multiple
+                            jurisdictions.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Can I customize invoice templates?</span>
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="12" y1="5" x2="12" y2="19"></line>
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Absolutely. Create custom invoice templates with your branding, choose from multiple layouts,
+                            add custom fields, and even save different templates for different customers.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Newsletter Section with CTA Content -->
+    <section class="newsletter-section">
+        <div class="container">
+            <div class="newsletter-wrapper">
+                <div class="newsletter-content">
+                    <div class="text-content">
+                        <h2 class="newsletter-title">Transform Your Financial Operations</h2>
+                        <p class="newsletter-description">Join businesses automating their accounting with ERPX Sales
+                        </p>
+                    </div>
+                    <div class="cta-buttons">
+                        <a href="contact.html" class="btn btn-primary btn-large">Get Started</a>
+                        <a href="contact.html" class="btn btn-secondary btn-large">Book a Free Demo</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-container"></div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/load-components.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/hr-payroll.js"></script>
+</body>
+
+</html>

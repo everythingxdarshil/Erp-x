@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing Configuration - ERPX Modular Solutions</title>
+    <link rel="icon" type="image/png" href="assets/logo/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Base Styles -->
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/consolidated-components.css?v=25.0">
+    <link rel="stylesheet" href="css/mobile-responsive.css?v=3.3">
+    <link rel="stylesheet" href="css/consolidated-utilities.css">
+    <link rel="stylesheet" href="css/padding-normalization.css">
+    <link rel="stylesheet" href="css/consolidated-utilities.css">
+    <!-- Pricing Styles (Consolidated) -->
+    <link rel="stylesheet" href="css/pricing.css?v=20260109141300">
+    <!-- Fullscreen Modal Styles -->
+    <link rel="stylesheet" href="css/consolidated-components.css">
+    <!-- How Billing Works Section Styles -->
+    <link rel="stylesheet" href="css/consolidated-pages.css">
+    <!-- AOS (Animate On Scroll) CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+</head>
+
+<body>
+    <!-- Header / Navigation -->
+    <div id="header-container"></div>
+
+    <!-- Hero Section -->
+    <section class="pricing-hero" data-aos="fade-up">
+        <div class="container">
+            <h1>Configure Your <span class="highlight-accent">Perfect
+                    Plan</span></h1>
+            <p class="hero-subtitle">
+                Select modules, adjust users, and see your transparent pricing in real-time.
+            </p>
+        </div>
+    </section>
+
+
+
+    <!-- Pricing Calculator Section -->
+    <section class="pricing-calculator-section" id="pricingSection">
+
+        <div class="pricing-section-wrapper">
+            <div class="container">
+                <div class="pricing-table-container" id="pricingTableContainer">
+                    <table class="pricing-config-table">
+                        <thead>
+                            <tr>
+                                <th class="col-module">Module</th>
+                                <th class="col-pricing">Pricing</th>
+                                <th class="col-inputs">Configuration</th>
+                                <th class="col-total">Module Total</th>
+                                <th class="col-action">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="pricingTableBody">
+                            <!-- Rows rendered by JS -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Mobile Cards Container (Mobile Only) -->
+                <div class="pricing-mobile-cards" id="pricingMobileCards">
+                    <!-- Cards rendered by JS -->
+                </div>
+
+                <!-- Fixed Summary Bar -->
+                <div class="pricing-sticky-header" id="pricingSummaryBar">
+                    <div class="header-content">
+                        <!-- Column 1: Module - Total Users -->
+                        <div class="summary-column summary-module">
+                            <div class="header-metric">
+                                <span class="label">Total Users Selected</span>
+                                <span class="value" id="headerTotalUsers">0</span>
+                            </div>
+                        </div>
+
+                        <!-- Column 2: Pricing - Empty (spacing) -->
+                        <div class="summary-column summary-pricing">
+                            <!-- Empty for alignment -->
+                        </div>
+
+                        <!-- Column 3: Billing Cycle - Centered between Pricing and Configuration -->
+                        <div class="summary-column summary-billing">
+                            <div class="header-metric billing-cycle-metric">
+                                <span class="label">Billing Cycle</span>
+                                <div class="billing-cycle-control">
+                                    <span class="cycle-label active" id="lblMonthly"
+                                        onclick="setBilling('monthly')">Monthly</span>
+                                    <label class="cycle-switch">
+                                        <input type="checkbox" id="billingToggle" onchange="toggleBilling(this)">
+                                        <span class="cycle-slider"></span>
+                                    </label>
+                                    <span class="cycle-label" id="lblYearly" onclick="setBilling('yearly')">Yearly <span
+                                            style="font-size:0.7em; color:var(--pricing-accent-dark);">-10%</span></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Column 4: Configuration - Empty (spacing) -->
+                        <div class="summary-column summary-config">
+                            <!-- Empty for alignment -->
+                        </div>
+
+                        <!-- Column 5: Module Total - Total Amount -->
+                        <div class="summary-column summary-total">
+                            <div class="header-metric header-total">
+                                <span class="label">Total Amount</span>
+                                <span class="value" id="headerGrandTotal">₹0.00</span>
+                            </div>
+                        </div>
+
+                        <!-- Column 6: Action - Get Started Button -->
+                        <div class="summary-column summary-action">
+                            <button class="get-started-btn" id="getStartedBtn">
+                                Get Started
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    <polyline points="12 5 19 12 12 19"></polyline>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+    </section>
+
+
+    <!-- How Billing Works Section -->
+    <section class="billing-works-section" data-aos="fade-up">
+        <div class="container">
+            <h2 class="section-title centered-title">How Billing Works</h2>
+            <p class="section-subtitle">Simple, transparent, and flexible pricing</p>
+
+            <div class="billing-works-grid">
+                <!-- Card 1 -->
+                <div class="billing-work-card" data-aos="fade-up">
+                    <div class="work-card-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M9 11l3 3L22 4" />
+                            <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                        </svg>
+                    </div>
+                    <h4 class="work-card-title">Choose Your Modules</h4>
+                    <p class="work-card-desc">Select only the modules you need. No forced bundles or unnecessary
+                        features.</p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="billing-work-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="work-card-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                            <circle cx="9" cy="7" r="4" />
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                        </svg>
+                    </div>
+                    <h4 class="work-card-title">Set Users</h4>
+                    <p class="work-card-desc">Define the number of users you need. Scale up or down anytime.
+                    </p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="billing-work-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="work-card-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <line x1="12" y1="1" x2="12" y2="23" />
+                            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+                        </svg>
+                    </div>
+                    <h4 class="work-card-title">See Your Price Instantly</h4>
+                    <p class="work-card-desc">Get real-time pricing updates. No hidden fees or surprise charges.</p>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="billing-work-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="work-card-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
+                            <polyline points="17 6 23 6 23 12" />
+                        </svg>
+                    </div>
+                    <h4 class="work-card-title">Upgrade Anytime</h4>
+                    <p class="work-card-desc">Add, remove, or modify modules as your business grows. Complete
+                        flexibility.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section" data-aos="fade-up">
+        <div class="container">
+            <div class="faq-header">
+                <h2 class="faq-title">Frequently Asked Questions</h2>
+                <p class="faq-subtitle">Everything you need to know about ERPX pricing and billing.</p>
+            </div>
+            <div class="faq-container">
+                <!-- Item 1 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Can I change my billing cycle from monthly to yearly?</h3>
+                        <span class="faq-toggle">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 5V19" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, you can switch between monthly and yearly billing at any time. When you switch to yearly
+                            billing, you'll save 10% on your total cost. The change will take effect at your next
+                            billing cycle.</p>
+                    </div>
+                </div>
+                <!-- Item 2 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Can I add or remove modules after I subscribe?</h3>
+                        <span class="faq-toggle">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 5V19" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Absolutely! You can add or remove modules at any time. Your billing will be adjusted
+                            automatically based on your active modules. There are no long-term contracts or commitments.
+                        </p>
+                    </div>
+                </div>
+                <!-- Item 3 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What payment methods do you accept?</h3>
+                        <span class="faq-toggle">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 5V19" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We accept all major credit cards (Visa, MasterCard, American Express), debit cards, and bank
+                            transfers. All payments are processed securely through our PCI DSS compliant payment
+                            gateway.</p>
+                    </div>
+                </div>
+                <!-- Item 4 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Is there a cancellation fee?</h3>
+                        <span class="faq-toggle">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 5V19" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>No, there are no cancellation fees. You can cancel your subscription at any time, and you'll
+                            have access to your modules until the end of your current billing period. No questions
+                            asked.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section" data-aos="fade-up">
+        <div class="container">
+            <div class="newsletter-container" style="background-image: url('assets/home/cta-bg.png');">
+                <div class="newsletter-content">
+                    <h2 class="newsletter-title">Subscribe to your Newsletter</h2>
+                    <p class="newsletter-description">
+                        Stay informed and ahead of the curve with the latest updates, insights, and tips from ERPX. By
+                        subscribing to our newsletter
+                    </p>
+                    <form class="newsletter-form">
+                        <div class="input-group">
+                            <input type="email" placeholder="Your email Address" required>
+                            <button type="submit" class="subscribe-btn">Subscribe</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <div id="footer-container"></div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/load-components.js"></script>
+    <script src="js/main.js"></script>
+
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-out-cubic',
+            once: true,
+            offset: 50
+        });
+    </script>
+
+    <!-- Full-Screen Side-by-Side Modal System -->
+    <div class="modal-overlay-fullscreen" id="fullscreenModal">
+        <div class="modal-fullscreen-container">
+            <!-- Close Button (Top Right) -->
+            <button class="modal-close-fullscreen" id="closeFullscreenModal" aria-label="Close modal">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+
+            <div class="modal-split-layout">
+                <!-- LEFT PANEL: User Details Form / Summary -->
+                <div class="modal-panel modal-panel-left">
+                    <!-- Form View (Initial State) -->
+                    <div class="panel-content" id="userDetailsFormView">
+                        <div class="panel-header">
+                            <h2 class="panel-title">Enter Your Details</h2>
+                        </div>
+
+                        <div class="panel-body">
+                            <form id="userDetailsForm" novalidate>
+                                <div class="form-group">
+                                    <label for="firstName" class="form-label">
+                                        First Name <span class="required">*</span>
+                                    </label>
+                                    <input type="text" id="firstName" name="firstName" class="form-input" required
+                                        autocomplete="given-name" />
+                                    <span class="error-message" id="firstNameError"></span>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="lastName" class="form-label">
+                                        Last Name <span class="required">*</span>
+                                    </label>
+                                    <input type="text" id="lastName" name="lastName" class="form-input" required
+                                        autocomplete="family-name" />
+                                    <span class="error-message" id="lastNameError"></span>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="email" class="form-label">
+                                        Email <span class="required">*</span>
+                                    </label>
+                                    <input type="email" id="email" name="email" class="form-input"
+                                        placeholder="email@example.com" required autocomplete="email" />
+                                    <span class="error-message" id="emailError"></span>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="phone" class="form-label">
+                                        Phone Number <span class="required">*</span>
+                                    </label>
+                                    <input type="tel" id="phone" name="phone" class="form-input"
+                                        placeholder="+91 1234567890" required autocomplete="tel" />
+                                    <span class="error-message" id="phoneError"></span>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="companyName" class="form-label">
+                                        Company Name <span class="optional">(Optional)</span>
+                                    </label>
+                                    <input type="text" id="companyName" name="companyName" class="form-input"
+                                        autocomplete="organization" />
+                                </div>
+
+                                <div class="panel-footer">
+                                    <button type="submit" class="btn-submit btn-continue" id="submitUserDetails"
+                                        disabled>
+                                        Continue
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                                            <polyline points="12 5 19 12 12 19"></polyline>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- Summary View (After Form Submission) -->
+                    <div class="panel-content" id="userDetailsSummaryView" style="display: none;">
+                        <div class="panel-header">
+                            <h2 class="panel-title">Your Details</h2>
+                        </div>
+
+                        <div class="panel-body">
+                            <div class="details-summary-grid">
+                                <div class="summary-card">
+                                    <span class="summary-label">FULL NAME</span>
+                                    <span class="summary-value" id="summaryFullName">-</span>
+                                </div>
+                                <div class="summary-card">
+                                    <span class="summary-label">EMAIL</span>
+                                    <span class="summary-value" id="summaryEmail">-</span>
+                                </div>
+                                <div class="summary-card">
+                                    <span class="summary-label">PHONE NUMBER</span>
+                                    <span class="summary-value" id="summaryPhone">-</span>
+                                </div>
+                                <div class="summary-card" id="summaryCompanyCard" style="display: none;">
+                                    <span class="summary-label">COMPANY</span>
+                                    <span class="summary-value" id="summaryCompany">-</span>
+                                </div>
+                            </div>
+
+                            <!-- Back Button -->
+                            <button type="button" class="summary-back-button" id="summaryBackButton">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <line x1="19" y1="12" x2="5" y2="12"></line>
+                                    <polyline points="12 19 5 12 12 5"></polyline>
+                                </svg>
+                                Back to Edit Details
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RIGHT PANEL: Confirmation -->
+                <div class="modal-panel modal-panel-right" id="confirmationPanel">
+                    <div class="panel-content">
+                        <div class="panel-header">
+                            <h2 class="panel-title">Confirm Your Selection</h2>
+                        </div>
+
+                        <div class="panel-body">
+                            <!-- Selected Modules Section -->
+                            <div class="confirmation-section">
+                                <h3 class="section-heading">Selected Modules</h3>
+                                <div class="modules-list" id="confirmModulesList">
+                                    <!-- Modules will be dynamically inserted here -->
+                                </div>
+
+                                <!-- Billing Cycle -->
+                                <div class="billing-summary">
+                                    <div class="billing-item">
+                                        <span class="billing-label">BILLING CYCLE</span>
+                                        <span class="billing-value" id="confirmBillingCycle">Monthly</span>
+                                    </div>
+                                    <div class="billing-item total-amount">
+                                        <span class="billing-label">TOTAL AMOUNT</span>
+                                        <span class="billing-value grand-total" id="confirmGrandTotal">₹0.00</span>
+                                    </div>
+                                </div>
+
+                                <div class="panel-footer">
+                                    <button type="button" class="btn-secondary" id="backToUserDetails"
+                                        style="display: none;">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <line x1="19" y1="12" x2="5" y2="12"></line>
+                                            <polyline points="12 19 5 12 12 5"></polyline>
+                                        </svg>
+                                        Back
+                                    </button>
+                                    <button type="button" class="btn-submit btn-confirm" id="confirmSelection" disabled>
+                                        Confirm & Proceed
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <polyline points="20 6 9 17 4 12"></polyline>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pricing Logic -->
+        <script src="js/pricing-logic.js"></script>
+
+        <!-- Fullscreen Modal Handler -->
+        <script src="js/fullscreen-modal-handler.js"></script>
+
+        <!-- Modal Logic -->
+        <link rel="stylesheet" href="css/consolidated-components.css">
+        <script src="js/modal-handler.js"></script>
+
+</body>
+
+</html>
