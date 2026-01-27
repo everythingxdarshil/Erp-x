@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Powerful task and project management software. Organize work, collaborate with teams, and deliver projects on time with ERPX Work module.">
+    <title>Work - Task & Project Management | ERPX Solutions</title>
+    <link rel="icon" type="image/png" href="assets/logo/favicon.png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/mobile-responsive.css">
+    <link rel="stylesheet" href="css/consolidated-components.css">
+    <link rel="stylesheet" href="css/hr-payroll.css">
+
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Header / Navigation Placeholder -->
+    <div id="header-container"></div>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text" data-aos="fade-right">
+                    <div class="hero-badge">
+                        <svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path
+                                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z">
+                            </path>
+                        </svg>
+                        <span>Work</span>
+                    </div>
+                    <h1 class="hero-title">Streamline Projects With <span class="highlight">Smart Task Management</span>
+                    </h1>
+                    <p class="hero-description">Organize work, collaborate seamlessly, and deliver projects faster with
+                        intelligent task management, kanban boards, and real-time progress tracking.</p>
+                    <div class="hero-cta">
+                        <a href="contact.html" class="btn btn-primary btn-large">Get Started For Free</a>
+                        <a href="contact.html" class="btn btn-secondary btn-large">Book a Free Demo</a>
+                    </div>
+                </div>
+                <div class="hero-visual" data-aos="fade-left">
+                    <img src="assets/modules/hr-hero.png" alt="Work Management Dashboard" class="dashboard-img"
+                        onerror="this.src='assets/home/hero-1.jpg'">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust & Certifications Section -->
+    <section class="certifications-section" data-aos="fade-up">
+        <div class="container">
+            <div class="certifications-container">
+                <div class="certifications-content">
+                    <div class="cert-logo">
+                        <img src="assets/logo/weekmate-logo.png" alt="Logo" class="cert-logo-image"
+                            onerror="this.src='assets/logo/favicon.png'">
+                    </div>
+                    <div class="cert-text">
+                        <h2 class="cert-title">Certified To Deliver.<br>Trusted To Lead.</h2>
+                    </div>
+                </div>
+                <div class="cert-arrow">
+                    <svg class="arrow-icon" viewBox="0 0 80 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M2 12H78M78 12L68 4M78 12L68 20" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </div>
+                <div class="certifications-badges">
+                    <div class="cert-badge" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="badge-logo-wrapper">
+                            <img src="assets/certifications/hipaa.png" alt="HIPAA Compliant" class="cert-badge-logo">
+                        </div>
+                    </div>
+                    <div class="cert-badge" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="badge-logo-wrapper">
+                            <img src="assets/certifications/gdpr.png" alt="GDPR Ready" class="cert-badge-logo">
+                        </div>
+                    </div>
+                    <div class="cert-badge" data-aos="zoom-in" data-aos-delay="300">
+                        <div class="badge-logo-wrapper">
+                            <img src="assets/certifications/aicpa-soc.png" alt="AICPA SOC" class="cert-badge-logo">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Section -->
+    <section class="why-choose-section" data-aos="fade-up">
+        <div class="container">
+            <div class="why-choose-header">
+                <h2 class="section-title">Why Teams Choose ERPX Work Management?</h2>
+                <p class="section-subtitle">From task creation to project delivery, ERPX Work keeps your team aligned,
+                    productive, and focused on what matters most.</p>
+            </div>
+            <div class="why-choose-content">
+                <div class="benefits-tabs">
+                    <button class="benefit-tab active" data-tab="tasks">
+                        <svg class="tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 11l3 3L22 4"></path>
+                            <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+                        </svg>
+                        <span>Task Management</span>
+                    </button>
+                    <button class="benefit-tab" data-tab="projects">
+                        <svg class="tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                            <line x1="9" y1="3" x2="9" y2="21"></line>
+                        </svg>
+                        <span>Project Tracking</span>
+                    </button>
+                    <button class="benefit-tab" data-tab="kanban">
+                        <svg class="tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="3" width="7" height="7"></rect>
+                            <rect x="14" y="3" width="7" height="7"></rect>
+                            <rect x="14" y="14" width="7" height="7"></rect>
+                            <rect x="3" y="14" width="7" height="7"></rect>
+                        </svg>
+                        <span>Kanban Boards</span>
+                    </button>
+                    <button class="benefit-tab" data-tab="time">
+                        <svg class="tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polyline points="12 6 12 12 16 14"></polyline>
+                        </svg>
+                        <span>Time Tracking</span>
+                    </button>
+                    <button class="benefit-tab" data-tab="collaboration">
+                        <svg class="tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="9" cy="7" r="4"></circle>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        </svg>
+                        <span>Team Collaboration</span>
+                    </button>
+                </div>
+
+                <div class="benefits-content">
+                    <div class="benefit-panel active" data-panel="tasks">
+                        <h3>Effortless Task Creation & Assignment</h3>
+                        <p>Create tasks in seconds, assign to team members, set priorities, deadlines, and dependencies.
+                            Track every detail without the complexity.</p>
+                        <img src="assets/modules/hr-workflow.png" alt="Task Management" class="benefit-image">
+                    </div>
+                    <div class="benefit-panel" data-panel="projects">
+                        <h3>Complete Project Visibility</h3>
+                        <p>Monitor project health, track milestones, identify bottlenecks, and forecast completion dates
+                            with real-time dashboards and reports.</p>
+                        <img src="assets/modules/hr-attendance.png" alt="Project Tracking" class="benefit-image">
+                    </div>
+                    <div class="benefit-panel" data-panel="kanban">
+                        <h3>Visual Workflow Management</h3>
+                        <p>Drag-and-drop tasks across customizable kanban boards. Visualize your workflow, identify
+                            blockers, and optimize team productivity.</p>
+                        <img src="assets/modules/hr-insights.png" alt="Kanban Boards" class="benefit-image">
+                    </div>
+                    <div class="benefit-panel" data-panel="time">
+                        <h3>Accurate Time Tracking</h3>
+                        <p>Log time spent on tasks, generate timesheets automatically, and get insights into where your
+                            team's time is actually going.</p>
+                        <img src="assets/modules/hr-scale.png" alt="Time Tracking" class="benefit-image">
+                    </div>
+                    <div class="benefit-panel" data-panel="collaboration">
+                        <h3>Seamless Team Collaboration</h3>
+                        <p>Comment on tasks, tag teammates, share files, and keep all project communication in one
+                            place. No more scattered emails.</p>
+                        <img src="assets/modules/hr-portal.png" alt="Team Collaboration" class="benefit-image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section" data-aos="fade-up">
+        <div class="container">
+            <div class="features-header">
+                <h2 class="section-title">Complete Work Management Suite</h2>
+                <p class="section-subtitle">Everything you need to organize work and deliver projects successfully</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 11l3 3L22 4"></path>
+                            <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+                        </svg>
+                    </div>
+                    <h3>Task Creation & Assignment</h3>
+                    <p>Create, assign, and prioritize tasks with custom fields, tags, and dependencies for complete
+                        control.</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                            <line x1="9" y1="3" x2="9" y2="21"></line>
+                        </svg>
+                    </div>
+                    <h3>Project Management</h3>
+                    <p>Organize tasks into projects, set milestones, track progress, and deliver on time, every time.
+                    </p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="3" width="7" height="7"></rect>
+                            <rect x="14" y="3" width="7" height="7"></rect>
+                            <rect x="14" y="14" width="7" height="7"></rect>
+                            <rect x="3" y="14" width="7" height="7"></rect>
+                        </svg>
+                    </div>
+                    <h3>Kanban & List Views</h3>
+                    <p>Switch between kanban boards, list views, and calendar views to visualize work the way you
+                        prefer.</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polyline points="12 6 12 12 16 14"></polyline>
+                        </svg>
+                    </div>
+                    <h3>Time Tracking & Timesheets</h3>
+                    <p>Track time spent on tasks, generate automatic timesheets, and analyze team productivity trends.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Implementation Steps -->
+    <section class="implementation-section" data-aos="fade-up">
+        <div class="container">
+            <div class="implementation-header">
+                <h2 class="section-title">ERPX Work Implementation Steps</h2>
+                <p class="section-subtitle">Start organizing your work in minutes with our streamlined setup process.
+                </p>
+            </div>
+            <div class="implementation-steps">
+                <div class="step-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="step-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                            <polyline points="14 2 14 8 20 8"></polyline>
+                        </svg>
+                    </div>
+                    <div class="step-number">#1</div>
+                    <h3>Planning - Define Your Workflow</h3>
+                    <p>We understand your team structure, current processes, and project types to configure the perfect
+                        workflow setup.</p>
+                </div>
+                <div class="step-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="step-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                            <line x1="8" y1="21" x2="16" y2="21"></line>
+                            <line x1="12" y1="17" x2="12" y2="21"></line>
+                        </svg>
+                    </div>
+                    <div class="step-number">#2</div>
+                    <h3>Setup - Quick Configuration</h3>
+                    <p>Create projects, import existing tasks, set up boards, and configure permissions—all ready
+                        within
+                        hours.</p>
+                </div>
+                <div class="step-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="step-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="9" cy="7" r="4"></circle>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        </svg>
+                    </div>
+                    <div class="step-number">#3</div>
+                    <h3>Training - Get Your Team Onboard</h3>
+                    <p>Interactive walkthroughs, video tutorials, and live training sessions ensure everyone knows how
+                        to use the system.</p>
+                </div>
+                <div class="step-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="step-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                        </svg>
+                    </div>
+                    <div class="step-number">#4</div>
+                    <h3>Go Live - Start Delivering</h3>
+                    <p>Launch with full support, monitor team adoption, and optimize workflows based on real usage
+                        patterns.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section" data-aos="fade-up">
+        <div class="container">
+            <div class="testimonials-header">
+                <h2 class="section-title">Trusted by High-Performing Teams</h2>
+            </div>
+            <div class="swiper testimonials-swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <div class="testimonial-icon">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z" />
+                                </svg>
+                            </div>
+                            <p class="testimonial-text">"ERPX Work completely transformed how our team collaborates. We
+                                cut project delivery time by 35% in the first quarter."</p>
+                            <div class="testimonial-author">
+                                <div>
+                                    <div class="author-name">Michael Chen</div>
+                                    <div class="author-role">Director of Operations, MarketingCo</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <div class="testimonial-icon">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z" />
+                                </svg>
+                            </div>
+                            <p class="testimonial-text">"The kanban boards and time tracking features gave us complete
+                                visibility. No more missed deadlines or scope creep."</p>
+                            <div class="testimonial-author">
+                                <div>
+                                    <div class="author-name">Lisa Martinez</div>
+                                    <div class="author-role">Project Manager, DesignHub</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <div class="testimonial-icon">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z" />
+                                </svg>
+                            </div>
+                            <p class="testimonial-text">"Best project management tool we've used. Simple enough for
+                                everyone to adopt, powerful enough for complex projects."</p>
+                            <div class="testimonial-author">
+                                <div>
+                                    <div class="author-name">David Brown</div>
+                                    <div class="author-role">CTO, TechStart</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section" data-aos="fade-up">
+        <div class="container">
+            <div class="faq-header">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <p class="section-subtitle">ERPX help you keep track of their work and improve their productivity.</p>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Can I import my existing tasks and projects?</span>
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="12" y1="5" x2="12" y2="19"></line>
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes! We support bulk imports from CSV, Excel, and popular project management tools. Our team
+                            will help you migrate your data seamlessly.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>How does time tracking work?</span>
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="12" y1="5" x2="12" y2="19"></line>
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Team members can log time directly on tasks using manual entries or built-in timers. Time
+                            logs automatically generate timesheets and productivity reports.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Can I customize workflows for different project types?</span>
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="12" y1="5" x2="12" y2="19"></line>
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Absolutely. Create custom project templates, define custom stages, set unique workflows, and
+                            configure automation rules for each project type.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Does it integrate with other tools we use?</span>
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="12" y1="5" x2="12" y2="19"></line>
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes, ERPX Work integrates with popular tools like Slack, email, calendars, file storage, and
+                            more through our API and native connectors.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Newsletter Section with CTA Content -->
+    <section class="newsletter-section">
+        <div class="container">
+            <div class="newsletter-wrapper">
+                <div class="newsletter-content">
+                    <div class="text-content">
+                        <h2 class="newsletter-title">Ready to Boost Team Productivity?</h2>
+                        <p class="newsletter-description">Join thousands of teams delivering projects faster with ERPX
+                            Work
+                        </p>
+                    </div>
+                    <div class="cta-buttons">
+                        <a href="contact.html" class="btn btn-primary btn-large">Get Started</a>
+                        <a href="contact.html" class="btn btn-secondary btn-large">Book a Free Demo</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-container"></div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/load-components.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/hr-payroll.js"></script>
+</body>
+
+</html>
