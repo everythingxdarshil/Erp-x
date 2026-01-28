@@ -946,7 +946,7 @@
     max-width: 1000px;
     margin: 0 auto;
     background-color: white;
-    padding: var(--spacing-2xl);
+    padding: 2rem var(--spacing-2xl) var(--spacing-2xl);
     border-radius: 2rem;
     box-shadow: var(--shadow-subtle);
 }
@@ -1005,7 +1005,7 @@
     }
 
     .legal-container {
-        padding: var(--spacing-lg);
+        padding: 1.5rem var(--spacing-lg) var(--spacing-lg);
         border-radius: 1.5rem;
     }
 }
@@ -1181,7 +1181,8 @@ body {
 
 /* === Hero Section === */
 .product-hero {
-    padding: 5rem 0 6rem;
+    padding: 2rem 0;
+    margin-bottom: 4rem;
     text-align: center;
     position: relative;
     background: #E9ECEA;
@@ -1246,7 +1247,8 @@ body {
 
 /* === Architecture Section === */
 .architecture-section {
-    padding: 5rem 0 6rem;
+    padding: 2rem 0;
+    margin-bottom: 4rem;
     background: transparent;
 }
 
@@ -1358,7 +1360,7 @@ body {
 
 /* === Modules Section === */
 .modules-section {
-    padding: 5rem 0 6rem;
+    padding: 2rem 0;
     background: #E9ECEA;
 }
 
@@ -1591,7 +1593,8 @@ body {
 
 /* === Teams Section === */
 .teams-section {
-    padding: 5rem 0 6rem;
+    padding: 2rem 0;
+    margin-bottom: 4rem;
     background: transparent;
 }
 
@@ -1698,7 +1701,8 @@ body {
 
 /* === Capabilities Section === */
 .capabilities-section {
-    padding: 5rem 0 6rem;
+    padding: 2rem 0;
+    margin-bottom: 4rem;
     background: #E9ECEA;
 }
 
@@ -1778,7 +1782,8 @@ body {
 
 /* === CTA Section === */
 .product-cta-section {
-    padding: 5rem 0 6rem;
+    padding: 2rem 0;
+    margin-bottom: 4rem;
 }
 
 .product-cta-box {
@@ -2155,5 +2160,3 @@ body {
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
 }
-
-

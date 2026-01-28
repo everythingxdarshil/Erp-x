@@ -1,13 +1,13 @@
-/* ============================================
+﻿/* ============================================
    COMPREHENSIVE RESPONSIVE DESIGN SYSTEM
    Mobile-First Approach with Standardized Breakpoints
    ============================================ */
 
 /* ============================================
    BREAKPOINT STANDARDS:
-   - Mobile: ≤ 480px
-   - Tablet: 481px – 1024px
-   - Desktop: ≥ 1025px
+   - Mobile: â‰¤ 480px
+   - Tablet: 481px â€“ 1024px
+   - Desktop: â‰¥ 1025px
    ============================================ */
 
 /* ============================================
@@ -287,7 +287,7 @@ iframe {
 }
 
 /* ============================================
-   DESKTOP (≥ 1025px) - Default Styles
+   DESKTOP (â‰¥ 1025px) - Default Styles
    ============================================ */
 
 /* Hide mobile menu on desktop */
@@ -302,7 +302,7 @@ iframe {
 }
 
 /* ============================================
-   TABLET (481px – 1024px)
+   TABLET (481px â€“ 1024px)
    ============================================ */
 
 @media screen and (min-width: 481px) and (max-width: 1024px) {
@@ -520,7 +520,7 @@ iframe {
 }
 
 /* ============================================
-   MOBILE & TABLET (≤ 1024px)
+   MOBILE & TABLET (â‰¤ 1024px)
    ============================================ */
 
 @media screen and (max-width: 1024px) {
@@ -532,7 +532,7 @@ iframe {
         width: calc(100% - 2rem);
     }
 
-    /* Mobile menu integration with navbar - applies to all devices ≤1024px */
+    /* Mobile menu integration with navbar - applies to all devices â‰¤1024px */
     .mobile-menu {
         border-top: none !important;
         border-top-left-radius: 0 !important;
@@ -554,7 +554,7 @@ iframe {
 }
 
 /* ============================================
-   MOBILE ONLY (≤ 480px) - Override for edge-to-edge
+   MOBILE ONLY (â‰¤ 480px) - Override for edge-to-edge
    ============================================ */
 
 @media screen and (max-width: 480px) {
@@ -575,10 +575,6 @@ iframe {
     .hero .container,
     .hero-content,
     .info-cards-section .container,
-    .stats-section .container,
-    .video-testimonial-section .container,
-    .trust-testimonials-section .container,
-    .elevate-features-section .container,
     .logo-slider-section .container,
     .pricing-section .container,
     .about-hero .container,
@@ -621,6 +617,29 @@ iframe {
 
     .navbar-brand {
         flex: 0 0 auto;
+        padding-left: 0.5rem;
+    }
+
+    /* Edge-to-edge containers for specific sections */
+    .hero .container,
+    .hero-section .container,
+    .hero-content,
+    .info-cards-section .container,
+    .stats-section .container,
+    .video-testimonial-section .container,
+    .trust-testimonials-section .container,
+    .elevate-features-section .container,
+    .logo-slider-section .container,
+    .pricing-section .container,
+    .about-hero .container,
+    .mission-section .container,
+    .values-section .container,
+    .contact-section .container,
+    .industries-section .container {
+        padding-left: 0 !important;
+        padding-top: 0 !important;
+        padding-right: 0 !important;
+        margin-top: 0 !important;
     }
 
     .navbar-nav {
@@ -739,9 +758,47 @@ iframe {
         padding: 0.5rem;
     }
 
+    /* Product Page Sections */
+    .product-hero {
+        padding: 2rem var(--spacing-sm);
+        margin-top: 2rem;
+    }
+
+    .modules-section {
+        padding: 2rem var(--spacing-sm);
+        margin-bottom: 6rem !important;
+    }
+
+    .teams-section {
+        padding: 2rem var(--spacing-sm);
+        margin-bottom: 0 !important;
+    }
+
+    .capabilities-section {
+        padding: 2rem var(--spacing-sm);
+        margin-bottom: 0 !important;
+    }
+
+    .unified-platform-section {
+        padding: 2rem var(--spacing-sm);
+        margin-bottom: 0 !important;
+    }
+
+    /* Override desktop margin-bottom values for mobile consistency */
+    .logo-slider-section,
+    .info-cards-section,
+    .features-section,
+    .stats-section,
+    .video-testimonial-section,
+    .trust-testimonials-section,
+    .elevate-features-section,
+    .newsletter-section {
+        margin-bottom: 0 !important;
+    }
+
     /* Logo Slider Section */
     .logo-slider-section {
-        padding: var(--spacing-lg) var(--spacing-sm);
+        padding: 2rem var(--spacing-sm);
     }
 
     .logo-slider-title {
@@ -755,7 +812,7 @@ iframe {
 
     /* Features Section */
     .features-section {
-        padding: var(--spacing-lg) var(--spacing-sm);
+        padding: 2rem var(--spacing-sm);
     }
 
     .features-title {
@@ -766,38 +823,39 @@ iframe {
         font-size: 0.9375rem;
     }
 
-    .features-grid {
-        grid-template-columns: 1fr;
-        gap: var(--spacing-lg);
+    .features-cards-grid {
+        gap: 1rem;
     }
 
-    .feature-card {
-        padding: var(--spacing-md);
+    .feature-module-card {
+        padding: 1.25rem;
+        gap: 1.25rem;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
     }
 
-    .feature-icon,
     .feature-icon-circle {
-        width: 60px;
-        height: 60px;
+        width: 48px;
+        height: 48px;
     }
 
-    .feature-icon-img,
     .feature-icon-svg {
-        width: 32px;
-        height: 32px;
+        width: 20px;
+        height: 20px;
     }
 
-    .feature-card-title {
-        font-size: 1.125rem;
+    .feature-module-title {
+        font-size: 1rem;
     }
 
-    .feature-card-description {
-        font-size: 0.9375rem;
+    .feature-module-description {
+        font-size: 0.875rem;
     }
 
     /* Information Cards Section */
     .info-cards-section {
-        padding: var(--spacing-lg) var(--spacing-sm);
+        padding: 2rem var(--spacing-sm);
     }
 
     .info-cards-title {
@@ -831,7 +889,7 @@ iframe {
 
     /* Stats Section */
     .stats-section {
-        padding: var(--spacing-lg) var(--spacing-sm);
+        padding: 2rem var(--spacing-sm);
     }
 
     .stats-banner {
@@ -862,7 +920,7 @@ iframe {
 
     /* Video Testimonial Section */
     .video-testimonial-section {
-        padding: var(--spacing-lg) var(--spacing-sm);
+        padding: 2rem var(--spacing-sm);
     }
 
     .video-testimonial-container {
@@ -892,7 +950,7 @@ iframe {
 
     /* Trust Testimonials Section */
     .trust-testimonials-section {
-        padding: var(--spacing-lg) var(--spacing-sm);
+        padding: 2rem var(--spacing-sm);
     }
 
     .trust-testimonials-grid {
@@ -910,7 +968,8 @@ iframe {
 
     /* Elevate Features Section */
     .elevate-features-section {
-        padding: var(--spacing-lg) var(--spacing-sm);
+        padding: 2rem var(--spacing-sm);
+        margin-bottom: 0 !important;
     }
 
     .elevate-features-container {
@@ -949,7 +1008,7 @@ iframe {
 
     /* Newsletter Section */
     .newsletter-section {
-        padding: var(--spacing-lg) var(--spacing-sm);
+        padding: 2rem var(--spacing-sm);
     }
 
     .newsletter-container {
@@ -1068,14 +1127,25 @@ iframe {
         padding: var(--spacing-md);
     }
 
+    /* Product modules list - add extra bottom spacing */
+    .product-modules-list {
+        gap: 2rem;
+        padding-bottom: 4rem !important;
+    }
+
+    /* Last product card needs extra bottom margin */
+    .product-card-link:last-child .product-split-card {
+        margin-bottom: 3rem !important;
+    }
+
     /* CTA Sections */
     .cta-section {
-        padding: var(--spacing-lg) var(--spacing-sm);
+        padding: 2rem var(--spacing-sm);
     }
 
     /* FAQ */
     .faq-section {
-        padding: var(--spacing-lg) var(--spacing-sm);
+        padding: 2rem var(--spacing-sm);
     }
 
     .faq-item {
@@ -1092,7 +1162,7 @@ iframe {
 
     /* Contact Form */
     .contact-form-section {
-        padding: var(--spacing-lg) var(--spacing-sm);
+        padding: 2rem var(--spacing-sm);
     }
 
     /* Industry Sections */
@@ -1102,7 +1172,7 @@ iframe {
 
     /* Pricing Section */
     .pricing-section {
-        padding: var(--spacing-lg) var(--spacing-sm);
+        padding: 2rem var(--spacing-sm);
     }
 
     .pricing-title {
@@ -1152,7 +1222,7 @@ iframe {
 }
 
 /* ============================================
-   MEDIUM MOBILE (481px – 768px)
+   MEDIUM MOBILE (481px â€“ 768px)
    ============================================ */
 
 @media screen and (min-width: 481px) and (max-width: 768px) {
